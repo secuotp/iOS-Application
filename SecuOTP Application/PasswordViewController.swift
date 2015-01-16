@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class PasswordViewController: UIViewController {
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,5 +22,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func sendPassword(sender: AnyObject) {
+        var password:String = passwordField.text
+        if(password == "1234"){
+            println("Good")
+            
+        }else {
+            println("Not Good")
+        }
+    }
 }
 
