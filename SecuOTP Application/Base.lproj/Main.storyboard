@@ -8,7 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="c3l-Q8-g4F">
             <objects>
-                <viewController id="nDW-p5-oB6" customClass="LoginViewController" customModule="SecuOTP_Application" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="nDW-p5-oB6" customClass="LoginViewController" customModule="SecuOTP_Application" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Tv-jH-LVb"/>
                         <viewControllerLayoutGuide type="bottom" id="PMz-ff-CAs"/>
@@ -100,11 +100,31 @@
                         <outlet property="passwordField" destination="X0M-3Q-fpg" id="PlQ-Si-mCe"/>
                         <outlet property="submitButton" destination="XJq-8O-fvD" id="Jm5-yI-Kh3"/>
                         <outlet property="viewContainer" destination="1xW-Lk-97w" id="FfX-yS-xBe"/>
+                        <segue destination="php-C8-4ed" kind="show" identifier="LoginToCreatePassword" id="QYo-yV-rVD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7em-S6-9nu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1161" y="165"/>
+        </scene>
+        <!--Create Password Controller-->
+        <scene sceneID="Fzs-E6-aM6">
+            <objects>
+                <viewController storyboardIdentifier="CreatePasswordController" id="php-C8-4ed" customClass="CreatePasswordController" customModule="SecuOTP_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LUH-wg-Tsz"/>
+                        <viewControllerLayoutGuide type="bottom" id="e8C-wu-BOp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eFD-kC-QSL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tuN-un-AS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1607" y="157"/>
         </scene>
     </scenes>
     <resources>

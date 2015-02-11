@@ -23,9 +23,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if(plistIO.getPlistValue(Key: "First Time") == "true"){
-            println("Get True")
-        } else {
             let height = self.view.bounds.height
             
             // Layout Constraint
@@ -39,11 +36,15 @@ class LoginViewController: UIViewController {
                 constant: height * 0.2)
             
             self.view.addConstraint(topLogoConstraint)
+        
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if(plistIO.getPlistValue(Key: "First Time") == "true"){
+            println("Get True")
+            self.performSegueWithIdentifier("LoginToCreatePassword", sender: self)
         }
-        
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,12 +53,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func sendPassword(sender: AnyObject) {
-        var password:String = passwordField.text
-        if(password == "1234"){
-                    }else {
-            var alertName : UIAlertView = UIAlertView(title: "Error", message: "Enter Invalid password", delegate: nil, cancelButtonTitle: "OK")
-            alertName.show()
-        }
+        
     }
 }
 
