@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		473293FE1A8A1F9A00B6F3F4 /* DataSotrage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 473293FD1A8A1F9A00B6F3F4 /* DataSotrage.plist */; };
+		473294001A8A229000B6F3F4 /* PlistStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473293FF1A8A229000B6F3F4 /* PlistStream.swift */; };
 		474138841A66716B00966A82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474138831A66716B00966A82 /* AppDelegate.swift */; };
-		474138861A66716B00966A82 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474138851A66716B00966A82 /* PasswordViewController.swift */; };
+		474138861A66716B00966A82 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474138851A66716B00966A82 /* LoginViewController.swift */; };
 		474138891A66716B00966A82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474138871A66716B00966A82 /* Main.storyboard */; };
 		4741388B1A66716B00966A82 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4741388A1A66716B00966A82 /* Images.xcassets */; };
 		4741389A1A66716C00966A82 /* SecuOTP_ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474138991A66716C00966A82 /* SecuOTP_ApplicationTests.swift */; };
-		4791B25B1A67C97400E10A38 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4791B25A1A67C97400E10A38 /* Launch Screen.xib */; };
+		47BE8E661A8A8F1700047FDF /* CreatePassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47BE8E651A8A8F1700047FDF /* CreatePassword.xib */; };
+		47BE8E681A8A91AA00047FDF /* ResponsiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE8E671A8A91AA00047FDF /* ResponsiveTextFieldViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +29,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		473293FD1A8A1F9A00B6F3F4 /* DataSotrage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DataSotrage.plist; sourceTree = "<group>"; };
+		473293FF1A8A229000B6F3F4 /* PlistStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistStream.swift; sourceTree = "<group>"; };
 		4741387E1A66716B00966A82 /* SecuOTP Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SecuOTP Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		474138821A66716B00966A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		474138831A66716B00966A82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		474138851A66716B00966A82 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		474138851A66716B00966A82 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		474138881A66716B00966A82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4741388A1A66716B00966A82 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		474138931A66716C00966A82 /* SecuOTP ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SecuOTP ApplicationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		474138981A66716C00966A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		474138991A66716C00966A82 /* SecuOTP_ApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecuOTP_ApplicationTests.swift; sourceTree = "<group>"; };
-		4791B25A1A67C97400E10A38 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "../Launch Screen.xib"; sourceTree = "<group>"; };
+		47BE8E651A8A8F1700047FDF /* CreatePassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatePassword.xib; sourceTree = "<group>"; };
+		47BE8E671A8A91AA00047FDF /* ResponsiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsiveTextFieldViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +83,10 @@
 		474138801A66716B00966A82 /* SecuOTP Application */ = {
 			isa = PBXGroup;
 			children = (
+				473293FD1A8A1F9A00B6F3F4 /* DataSotrage.plist */,
+				47BE8E641A8A8AB000047FDF /* VIew */,
 				475705DB1A69103B005B56B5 /* controller */,
 				475705DA1A691021005B56B5 /* model */,
-				4791B25A1A67C97400E10A38 /* Launch Screen.xib */,
-				474138831A66716B00966A82 /* AppDelegate.swift */,
-				474138871A66716B00966A82 /* Main.storyboard */,
-				4741388A1A66716B00966A82 /* Images.xcassets */,
 				474138811A66716B00966A82 /* Supporting Files */,
 			);
 			path = "SecuOTP Application";
@@ -116,6 +120,9 @@
 		475705DA1A691021005B56B5 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				4741388A1A66716B00966A82 /* Images.xcassets */,
+				473293FF1A8A229000B6F3F4 /* PlistStream.swift */,
+				47BE8E671A8A91AA00047FDF /* ResponsiveTextFieldViewController.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -123,9 +130,19 @@
 		475705DB1A69103B005B56B5 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				474138851A66716B00966A82 /* PasswordViewController.swift */,
+				474138831A66716B00966A82 /* AppDelegate.swift */,
+				474138851A66716B00966A82 /* LoginViewController.swift */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		47BE8E641A8A8AB000047FDF /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				474138871A66716B00966A82 /* Main.storyboard */,
+				47BE8E651A8A8F1700047FDF /* CreatePassword.xib */,
+			);
+			name = VIew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,9 +225,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473293FE1A8A1F9A00B6F3F4 /* DataSotrage.plist in Resources */,
 				474138891A66716B00966A82 /* Main.storyboard in Resources */,
 				4741388B1A66716B00966A82 /* Images.xcassets in Resources */,
-				4791B25B1A67C97400E10A38 /* Launch Screen.xib in Resources */,
+				47BE8E661A8A8F1700047FDF /* CreatePassword.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +246,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				474138861A66716B00966A82 /* PasswordViewController.swift in Sources */,
+				47BE8E681A8A91AA00047FDF /* ResponsiveTextFieldViewController.swift in Sources */,
+				473294001A8A229000B6F3F4 /* PlistStream.swift in Sources */,
+				474138861A66716B00966A82 /* LoginViewController.swift in Sources */,
 				474138841A66716B00966A82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
