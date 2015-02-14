@@ -4,5 +4,7 @@
 <dict>
 	<key>First Time</key>
 	<string>true</string>
+	<key>Password</key>
+	<string></string>
 </dict>
 </plist>

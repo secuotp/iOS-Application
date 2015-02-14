@@ -9,6 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    // Outlet Only
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
@@ -17,34 +18,52 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var logoView: UIImageView!
     @IBOutlet weak var lockview: UIImageView!
 
+    // Other Variable & Constant
     let plistIO : PlistStream = PlistStream()
     
+    // When this view controller loading
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-            let height = self.view.bounds.height
+        // Getting user Hardware Height
+        let height = self.view.bounds.height
             
-            // Layout Constraint
-            let topLogoConstraint : NSLayoutConstraint = NSLayoutConstraint(
-                item: logoView,
-                attribute: NSLayoutAttribute.Top,
-                relatedBy: NSLayoutRelation.Equal,
-                toItem: viewContainer,
-                attribute: NSLayoutAttribute.Top,
-                multiplier: 1,
-                constant: height * 0.2)
-            
-            self.view.addConstraint(topLogoConstraint)
+        // Layout Constraint
+        let topLogoConstraint : NSLayoutConstraint = NSLayoutConstraint(
+            item: logoView,
+            attribute: NSLayoutAttribute.Top,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: viewContainer,
+            attribute: NSLayoutAttribute.Top,
+            multiplier: 1,
+            constant: height * 0.2)
+        let topLockViewConstraint : NSLayoutConstraint = NSLayoutConstraint(
+            item: lockview,
+            attribute: NSLayoutAttribute.Top,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: logoView,
+            attribute: NSLayoutAttribute.Bottom,
+            multiplier: 1,
+            constant: height * 0.15)
+        
+        // Add Constraint to View Controller
+        self.view.addConstraint(topLogoConstraint)
+        self.view.addConstraint(topLockViewConstraint)
         
         
     }
     
+    // When This view controller Appear
     override func viewDidAppear(animated: Bool) {
+        // Check if this Application open for the first time
         if(plistIO.getPlistValue(Key: "First Time") == "true"){
-            println("Get True")
+            // Delay 1 Seconds
+            sleep(1)
+            
+            // Segue to Getting Started View Controller
             self.performSegueWithIdentifier("LoginToCreatePassword", sender: self)
         }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +71,7 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // When user tapped Submit Button
     @IBAction func sendPassword(sender: AnyObject) {
         
     }
