@@ -57,9 +57,6 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         // Check if this Application open for the first time
         if(plistIO.getPlistValue(Key: "First Time") == "true"){
-            // Delay 1 Seconds
-            sleep(1)
-            
             // Segue to Getting Started View Controller
             self.performSegueWithIdentifier("LoginToCreatePassword", sender: self)
         }
@@ -73,7 +70,19 @@ class LoginViewController: UIViewController {
 
     // When user tapped Submit Button
     @IBAction func sendPassword(sender: AnyObject) {
+        var password = passwordField.text
+        var passwordSHA512 : NSString = password.sha512()!
         
+        if(plistIO.getPlistValue(Key: "Password") == passwordSHA512){
+            self.performSegueWithIdentifier("LoginToAppManager", sender: self)
+        } else {
+            let dialog : UIAlertView = UIAlertView(title: "Error",
+                message: "Enter invalid Password",
+                delegate: nil,
+                cancelButtonTitle: "OK")
+            dialog.show()
+            passwordField.text = ""
+        }
     }
 }
 

@@ -6,5 +6,9 @@
 	<string>true</string>
 	<key>Password</key>
 	<string></string>
+	<key>Application</key>
+	<array>
+		<string></string>
+	</array>
 </dict>
 </plist>

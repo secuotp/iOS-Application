@@ -14,6 +14,7 @@
 		474138891A66716B00966A82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474138871A66716B00966A82 /* Main.storyboard */; };
 		4741388B1A66716B00966A82 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4741388A1A66716B00966A82 /* Images.xcassets */; };
 		4741389A1A66716C00966A82 /* SecuOTP_ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474138991A66716C00966A82 /* SecuOTP_ApplicationTests.swift */; };
+		47644BAB1A8F1C73002E99F5 /* AppManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47644BAA1A8F1C73002E99F5 /* AppManagerViewController.swift */; };
 		47BE8E681A8A91AA00047FDF /* ResponsiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE8E671A8A91AA00047FDF /* ResponsiveTextFieldViewController.swift */; };
 		47C12F431A8BE12E00D7B486 /* GettingStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C12F421A8BE12E00D7B486 /* GettingStartedViewController.swift */; };
 		47F6380A1A8E614D00215025 /* DataEncrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F638091A8E614D00215025 /* DataEncrypt.swift */; };
@@ -41,6 +42,7 @@
 		474138931A66716C00966A82 /* SecuOTP ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SecuOTP ApplicationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		474138981A66716C00966A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		474138991A66716C00966A82 /* SecuOTP_ApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecuOTP_ApplicationTests.swift; sourceTree = "<group>"; };
+		47644BAA1A8F1C73002E99F5 /* AppManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManagerViewController.swift; sourceTree = "<group>"; };
 		479B962F1A8E63E10064D196 /* SecuOTP Application-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SecuOTP Application-Bridging-Header.h"; sourceTree = "<group>"; };
 		47BE8E671A8A91AA00047FDF /* ResponsiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsiveTextFieldViewController.swift; sourceTree = "<group>"; };
 		47C12F421A8BE12E00D7B486 /* GettingStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettingStartedViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				474138831A66716B00966A82 /* AppDelegate.swift */,
 				474138851A66716B00966A82 /* LoginViewController.swift */,
 				47C12F421A8BE12E00D7B486 /* GettingStartedViewController.swift */,
+				47644BAA1A8F1C73002E99F5 /* AppManagerViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				47BE8E681A8A91AA00047FDF /* ResponsiveTextFieldViewController.swift in Sources */,
 				473294001A8A229000B6F3F4 /* PlistStream.swift in Sources */,
 				47C12F431A8BE12E00D7B486 /* GettingStartedViewController.swift in Sources */,
+				47644BAB1A8F1C73002E99F5 /* AppManagerViewController.swift in Sources */,
 				474138861A66716B00966A82 /* LoginViewController.swift in Sources */,
 				474138841A66716B00966A82 /* AppDelegate.swift in Sources */,
 				47F6380A1A8E614D00215025 /* DataEncrypt.swift in Sources */,

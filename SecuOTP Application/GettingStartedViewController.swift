@@ -59,21 +59,39 @@ class GettingStartedViewController: UIViewController {
         // Get password form text Field
         var password : String = passwordField.text
         
-        // Write Plist when key is "Password"
-        plistWriter.setPlistValue(Key: "Password", Value: password.sha512()!)
+        // Create UIAlertController
+        let alert : UIAlertController = UIAlertController(
+            title: "Confirmed",
+            message: "Are you sure you want to use this Password",
+            preferredStyle: UIAlertControllerStyle.ActionSheet)
         
-        // Write Plist when key is "First Time"
-        plistWriter.setPlistValue(Key: "First Time", Value: "false")
+        // Create OK Action for UIAlertController
+        let ok : UIAlertAction = UIAlertAction(
+            title: "OK",
+            style: UIAlertActionStyle.Default,
+            handler: {
+                (action : UIAlertAction!) -> Void in
+                // Write Plist when key is "Password"
+                self.plistWriter.setPlistValue(Key: "Password", Value: password.sha512()!)
         
-        // Show Dialog
-        let dialog : UIAlertView = UIAlertView(
-            title: "Create Password Complete",
-            message: "Getting Started has completed",
-            delegate: nil,
-            cancelButtonTitle: "OK")
-        dialog.show()
+                // Write Plist when key is "First Time"
+                self.plistWriter.setPlistValue(Key: "First Time", Value: "false")
+            
+                // Segue to App Manager
+                self.performSegueWithIdentifier("GettingStartedToAppManager", sender: self)
+            })
         
-        // Segue to App Manager
-        self.performSegueWithIdentifier("GettingStartedToAppManager", sender: self)
+        // Create Cancel Action for UIAlertController
+        let cancel : UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil)
+
+        // Add AlertAction to UIAlertController
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        // Show Alert Controller
+        self.presentViewController(alert, animated: true, completion: nil)
+
+        
     }
+    
 }
