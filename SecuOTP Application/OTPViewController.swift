@@ -10,10 +10,16 @@ import UIKit
 
 class OTPViewController: UIViewController {
 
+    var titleName: NSString!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if(titleName == nil){
+            titleName == "OTP"
+        }
+        
+        self.navigationItem.title = titleName.capitalizedString
     }
 
     override func didReceiveMemoryWarning() {

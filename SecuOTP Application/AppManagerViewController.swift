@@ -46,11 +46,17 @@ class AppManagerViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     
-    
     // This Function will do somthing when the cell was selected
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-            var alert: UIAlertView = UIAlertView(title: "Test",
-                message: item[indexPath.row], delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
+        self.performSegueWithIdentifier("AppManagerToViewOTP", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "AppManagerToViewOTP"){
+            var indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            let destViewController : OTPViewController = segue.destinationViewController
+             as OTPViewController
+            destViewController.titleName = item[indexPath.item]
+        }
     }
 }
