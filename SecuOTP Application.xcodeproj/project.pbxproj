@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47CA2E161A9DE88A00AA17E3 /* ConfigEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E151A9DE88A00AA17E3 /* ConfigEntity.swift */; };
+		47CA2E191A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E171A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld */; };
+		47CA2E241A9DEBFE00AA17E3 /* ContentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E221A9DEBFE00AA17E3 /* ContentPageViewController.swift */; };
+		47CA2E281A9DFA9D00AA17E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E271A9DFA9D00AA17E3 /* LoginViewController.swift */; };
+		47CA2E2A1A9DFB6D00AA17E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47CA2E291A9DFB6D00AA17E3 /* CoreData.framework */; };
 		47E1B9D71A9C7CC6007FCC8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1B9D61A9C7CC6007FCC8B /* AppDelegate.swift */; };
-		47E1B9DA1A9C7CC6007FCC8B /* SecuOTP_Application.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 47E1B9D81A9C7CC6007FCC8B /* SecuOTP_Application.xcdatamodeld */; };
-		47E1B9DC1A9C7CC6007FCC8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1B9DB1A9C7CC6007FCC8B /* ViewController.swift */; };
+		47E1B9DC1A9C7CC6007FCC8B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1B9DB1A9C7CC6007FCC8B /* StartViewController.swift */; };
 		47E1B9DF1A9C7CC6007FCC8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E1B9DD1A9C7CC6007FCC8B /* Main.storyboard */; };
 		47E1B9E11A9C7CC6007FCC8B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47E1B9E01A9C7CC6007FCC8B /* Images.xcassets */; };
-		47E1B9E41A9C7CC6007FCC8B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E1B9E21A9C7CC6007FCC8B /* LaunchScreen.xib */; };
 		47E1B9F01A9C7CC6007FCC8B /* SecuOTP_ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1B9EF1A9C7CC6007FCC8B /* SecuOTP_ApplicationTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,14 +30,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47CA2E151A9DE88A00AA17E3 /* ConfigEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigEntity.swift; sourceTree = "<group>"; };
+		47CA2E181A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SecuOTP_Application.xcdatamodel; sourceTree = "<group>"; };
+		47CA2E221A9DEBFE00AA17E3 /* ContentPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPageViewController.swift; sourceTree = "<group>"; };
+		47CA2E271A9DFA9D00AA17E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		47CA2E291A9DFB6D00AA17E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		47E1B9D11A9C7CC6007FCC8B /* SecuOTP Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SecuOTP Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E1B9D51A9C7CC6007FCC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47E1B9D61A9C7CC6007FCC8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		47E1B9D91A9C7CC6007FCC8B /* SecuOTP_Application.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SecuOTP_Application.xcdatamodel; sourceTree = "<group>"; };
-		47E1B9DB1A9C7CC6007FCC8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		47E1B9DB1A9C7CC6007FCC8B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		47E1B9DE1A9C7CC6007FCC8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47E1B9E01A9C7CC6007FCC8B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		47E1B9E31A9C7CC6007FCC8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		47E1B9E91A9C7CC6007FCC8B /* SecuOTP ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SecuOTP ApplicationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E1B9EE1A9C7CC6007FCC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47E1B9EF1A9C7CC6007FCC8B /* SecuOTP_ApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecuOTP_ApplicationTests.swift; sourceTree = "<group>"; };
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47CA2E2A1A9DFB6D00AA17E3 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,9 +65,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47CA2E1A1A9DE8D000AA17E3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				47CA2E1B1A9DE8D700AA17E3 /* coredata */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		47CA2E1B1A9DE8D700AA17E3 /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+				47CA2E151A9DE88A00AA17E3 /* ConfigEntity.swift */,
+				47CA2E171A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld */,
+			);
+			name = coredata;
+			sourceTree = "<group>";
+		};
+		47CA2E1C1A9DE8E300AA17E3 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				47E1B9D61A9C7CC6007FCC8B /* AppDelegate.swift */,
+				47CA2E271A9DFA9D00AA17E3 /* LoginViewController.swift */,
+				47CA2E261A9DFA8000AA17E3 /* pageviewcontoller */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		47CA2E1D1A9DE8EC00AA17E3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				47E1B9DD1A9C7CC6007FCC8B /* Main.storyboard */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		47CA2E261A9DFA8000AA17E3 /* pageviewcontoller */ = {
+			isa = PBXGroup;
+			children = (
+				47E1B9DB1A9C7CC6007FCC8B /* StartViewController.swift */,
+				47CA2E221A9DEBFE00AA17E3 /* ContentPageViewController.swift */,
+			);
+			name = pageviewcontoller;
+			sourceTree = "<group>";
+		};
 		47E1B9C81A9C7CC6007FCC8B = {
 			isa = PBXGroup;
 			children = (
+				47CA2E291A9DFB6D00AA17E3 /* CoreData.framework */,
 				47E1B9D31A9C7CC6007FCC8B /* SecuOTP Application */,
 				47E1B9EC1A9C7CC6007FCC8B /* SecuOTP ApplicationTests */,
 				47E1B9D21A9C7CC6007FCC8B /* Products */,
@@ -79,12 +131,10 @@
 		47E1B9D31A9C7CC6007FCC8B /* SecuOTP Application */ = {
 			isa = PBXGroup;
 			children = (
-				47E1B9D61A9C7CC6007FCC8B /* AppDelegate.swift */,
-				47E1B9DB1A9C7CC6007FCC8B /* ViewController.swift */,
-				47E1B9DD1A9C7CC6007FCC8B /* Main.storyboard */,
+				47CA2E1A1A9DE8D000AA17E3 /* model */,
+				47CA2E1C1A9DE8E300AA17E3 /* controller */,
+				47CA2E1D1A9DE8EC00AA17E3 /* view */,
 				47E1B9E01A9C7CC6007FCC8B /* Images.xcassets */,
-				47E1B9E21A9C7CC6007FCC8B /* LaunchScreen.xib */,
-				47E1B9D81A9C7CC6007FCC8B /* SecuOTP_Application.xcdatamodeld */,
 				47E1B9D41A9C7CC6007FCC8B /* Supporting Files */,
 			);
 			path = "SecuOTP Application";
@@ -196,7 +246,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				47E1B9DF1A9C7CC6007FCC8B /* Main.storyboard in Resources */,
-				47E1B9E41A9C7CC6007FCC8B /* LaunchScreen.xib in Resources */,
 				47E1B9E11A9C7CC6007FCC8B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,8 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47E1B9DC1A9C7CC6007FCC8B /* ViewController.swift in Sources */,
-				47E1B9DA1A9C7CC6007FCC8B /* SecuOTP_Application.xcdatamodeld in Sources */,
+				47CA2E281A9DFA9D00AA17E3 /* LoginViewController.swift in Sources */,
+				47CA2E241A9DEBFE00AA17E3 /* ContentPageViewController.swift in Sources */,
+				47CA2E191A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld in Sources */,
+				47E1B9DC1A9C7CC6007FCC8B /* StartViewController.swift in Sources */,
+				47CA2E161A9DE88A00AA17E3 /* ConfigEntity.swift in Sources */,
 				47E1B9D71A9C7CC6007FCC8B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,14 +298,6 @@
 				47E1B9DE1A9C7CC6007FCC8B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		47E1B9E21A9C7CC6007FCC8B /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				47E1B9E31A9C7CC6007FCC8B /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -340,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "SecuOTP Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "SecuOTP Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,6 +455,7 @@
 				47E1B9F51A9C7CC6007FCC8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		47E1B9F61A9C7CC6007FCC8B /* Build configuration list for PBXNativeTarget "SecuOTP ApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -417,16 +464,17 @@
 				47E1B9F81A9C7CC6007FCC8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		47E1B9D81A9C7CC6007FCC8B /* SecuOTP_Application.xcdatamodeld */ = {
+		47CA2E171A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				47E1B9D91A9C7CC6007FCC8B /* SecuOTP_Application.xcdatamodel */,
+				47CA2E181A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodel */,
 			);
-			currentVersion = 47E1B9D91A9C7CC6007FCC8B /* SecuOTP_Application.xcdatamodel */;
+			currentVersion = 47CA2E181A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodel */;
 			path = SecuOTP_Application.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
