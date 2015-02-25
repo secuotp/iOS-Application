@@ -1,5 +1,5 @@
 //
-//  ContentPageViewController.swift
+//  CreatePasswordViewController.swift
 //  SecuOTP Application
 //
 //  Created by Panasan Sinroungrong on 2/25/15.
@@ -8,18 +8,11 @@
 
 import UIKit
 
-class ContentPageViewController: UIViewController {
-    @IBOutlet var thisView: UIView!
-    
-    var pageIndex : Int?
-    var textName : String!
-    var color : UIColor!
-    
+class CreatePasswordViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        thisView.backgroundColor = color
-        
+
         // Do any additional setup after loading the view.
     }
 

@@ -12,7 +12,6 @@ class StartViewController: UIViewController , UIPageViewControllerDataSource {
 
     var pageViewController : UIPageViewController!
     
-    let titleName : [String] = ["A", "B", "C"]
     let color : [UIColor] = [UIColor.blueColor(), UIColor.lightGrayColor(), UIColor.redColor()]
     
     override func viewDidLoad() {
@@ -62,7 +61,6 @@ class StartViewController: UIViewController , UIPageViewControllerDataSource {
         }
         // Create a new view controller and pass suitable data.
         let contentPageViewController : ContentPageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ContentPageViewController") as ContentPageViewController!
-        contentPageViewController.textName = self.titleName[index]
         contentPageViewController.color = self.color[index]
         contentPageViewController.pageIndex = index
         return contentPageViewController
