@@ -74,7 +74,9 @@ class ConfirmPasswordViewController: UIViewController {
                 handler: { action in
                     if self.password! == self.textField.text {
                         let config:ConfigEntity = ConfigEntity()
-                        config.save(self.password!)
+                        config.password = self.password
+                        config.save()
+                        
                         self.performSegueWithIdentifier("ConfirmPasswordToLogin", sender: self)
                     } else {
                         let errorAlert: UIAlertView = UIAlertView(title: "Create PIN Failed", message: "Your entered PIN is mismatched\nCreated Again", delegate: nil, cancelButtonTitle: "OK")

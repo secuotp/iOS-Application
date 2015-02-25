@@ -9,13 +9,15 @@
 import UIKit
 import CoreData
 
-class ConfigEntity: NSObject {
-    let context : NSManagedObjectContext
+class ConfigEntity: NSObject, Entity {
+    // PRIVATE PARAM
+    private let context : NSManagedObjectContext
+    private let entity : NSEntityDescription
+    private let object : NSManagedObject
     
+    // PUBLIC PARAM
     let entityName : NSString = "Config"
-    
-    let entity : NSEntityDescription
-    let object : NSManagedObject
+    var password: NSString?
     
     override init(){
         context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
@@ -24,7 +26,7 @@ class ConfigEntity: NSObject {
         object = NSManagedObject(entity: entity, insertIntoManagedObjectContext: context)
     }
     
-    func save(password : NSString) {
+    func save() {
         object.setValue(password, forKey: "password")
         
         var error : NSError?
@@ -35,13 +37,13 @@ class ConfigEntity: NSObject {
     *
     * Start at 1 row
     */
-    func recordCount() -> Int {
+    func recordCount() -> NSInteger {
         let array = self.fetch()
         return array.count
     }
     
     // Fetch all Records in SqlLite (Config Entity)
-    private func fetch() -> NSArray {
+    func fetch() -> NSArray {
         let fetchRequest : NSFetchRequest = NSFetchRequest(entityName: entityName)
         var error : NSError?
         let fetchResults : NSArray = context.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]!

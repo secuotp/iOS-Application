@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		471426B41A9E65C700D72128 /* ConfirmPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471426B31A9E65C700D72128 /* ConfirmPasswordViewController.swift */; };
+		471426B61A9E786900D72128 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471426B51A9E786900D72128 /* Entity.swift */; };
 		47CA2E161A9DE88A00AA17E3 /* ConfigEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E151A9DE88A00AA17E3 /* ConfigEntity.swift */; };
 		47CA2E191A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E171A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld */; };
 		47CA2E241A9DEBFE00AA17E3 /* ContentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E221A9DEBFE00AA17E3 /* ContentPageViewController.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		471426B31A9E65C700D72128 /* ConfirmPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordViewController.swift; sourceTree = "<group>"; };
+		471426B51A9E786900D72128 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		47CA2E151A9DE88A00AA17E3 /* ConfigEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigEntity.swift; sourceTree = "<group>"; };
 		47CA2E181A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SecuOTP_Application.xcdatamodel; sourceTree = "<group>"; };
 		47CA2E221A9DEBFE00AA17E3 /* ContentPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPageViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		47CA2E1B1A9DE8D700AA17E3 /* coredata */ = {
 			isa = PBXGroup;
 			children = (
+				471426B51A9E786900D72128 /* Entity.swift */,
 				47CA2E151A9DE88A00AA17E3 /* ConfigEntity.swift */,
 				47CA2E171A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld */,
 			);
@@ -275,6 +278,7 @@
 				47CA2E191A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld in Sources */,
 				47E1B9DC1A9C7CC6007FCC8B /* StartViewController.swift in Sources */,
 				47CA2E161A9DE88A00AA17E3 /* ConfigEntity.swift in Sources */,
+				471426B61A9E786900D72128 /* Entity.swift in Sources */,
 				47CA2E2C1A9E021600AA17E3 /* CreatePasswordViewController.swift in Sources */,
 				471426B41A9E65C700D72128 /* ConfirmPasswordViewController.swift in Sources */,
 				47E1B9D71A9C7CC6007FCC8B /* AppDelegate.swift in Sources */,
