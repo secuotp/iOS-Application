@@ -33,23 +33,33 @@ class ConfigEntity: NSObject, Entity {
         context.save(&error)
     }
     
-    /**
-    *
-    * Start at 1 row
-    */
+    // Start at 1 row
     func recordCount() -> NSInteger {
         let array = self.fetch()
         return array.count
     }
     
     // Fetch all Records in SqlLite (Config Entity)
-    func fetch() -> NSArray {
+    func fetch() -> [NSManagedObject] {
         let fetchRequest : NSFetchRequest = NSFetchRequest(entityName: entityName)
         var error : NSError?
-        let fetchResults : NSArray = context.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]!
+        let fetchResults : [NSManagedObject] = context.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]!
         
         return fetchResults
     }
     
+    func getValueFromKey(key: NSString) -> NSMutableArray {
+        let dataArray: [NSManagedObject] = self.fetch()
+        
+        let data: NSMutableArray = NSMutableArray(capacity: dataArray.count)
+        
+        for var i = 0; i < dataArray.count; i++ {
+            
+            if dataArray[i].valueForKey(key) != nil {
+                data.addObject(dataArray[i].valueForKey(key) as NSString)
+            }
+        }
+        return data
+    }
     
 }

@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 SecuOTP. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 protocol Entity {
     func save()
-    func fetch() -> NSArray
-    func recordCount() -> NSInteger
+    func fetch() -> [NSManagedObject]
+    func recordCount() -> Int
 }
