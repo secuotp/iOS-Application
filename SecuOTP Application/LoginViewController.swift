@@ -54,30 +54,32 @@ class LoginViewController: UIViewController {
 
     @IBAction func whenKeyboardTap(sender: AnyObject) {
         if countElements(textField.text) == 0 {
-            dot1.text = "-"
-            dot2.text = "-"
-            dot3.text = "-"
-            dot4.text = "-"
+            dot1.text = "o"
+            dot2.text = "o"
+            dot3.text = "o"
+            dot4.text = "o"
         } else if countElements(textField.text) == 1 {
             dot1.text = "•"
-            dot2.text = "-"
-            dot3.text = "-"
-            dot4.text = "-"
+            dot2.text = "o"
+            dot3.text = "o"
+            dot4.text = "o"
         } else if countElements(textField.text) == 2 {
             dot1.text = "•"
             dot2.text = "•"
-            dot3.text = "-"
-            dot4.text = "-"
+            dot3.text = "o"
+            dot4.text = "o"
         } else if countElements(textField.text) == 3 {
             dot1.text = "•"
             dot2.text = "•"
             dot3.text = "•"
-            dot4.text = "-"
+            dot4.text = "o"
         } else if countElements(textField.text) == 4 {
             dot1.text = "•"
             dot2.text = "•"
             dot3.text = "•"
             dot4.text = "•"
+            
+            textField.resignFirstResponder()
             
             let config: ConfigEntity = ConfigEntity()
             let data: NSMutableArray = config.getValueFromKey("password")
@@ -89,12 +91,13 @@ class LoginViewController: UIViewController {
                 let alert: UIAlertView = UIAlertView(title: "Login Failed", message: "Your PIN is Incorrect", delegate: nil, cancelButtonTitle: "OK")
                 alert.show()
                 
-                dot1.text = "-"
-                dot2.text = "-"
-                dot3.text = "-"
-                dot4.text = "-"
+                dot1.text = "o"
+                dot2.text = "o"
+                dot3.text = "o"
+                dot4.text = "o"
                 textField.text = ""
                 
+                textField.becomeFirstResponder()
             }
         }
     /*

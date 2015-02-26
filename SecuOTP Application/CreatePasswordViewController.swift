@@ -57,40 +57,42 @@ class CreatePasswordViewController: UIViewController {
             pin = nil
             textField.text = ""
             
-            dot1.text = "-"
-            dot2.text = "-"
-            dot3.text = "-"
-            dot4.text = "-"
+            dot1.text = "o"
+            dot2.text = "o"
+            dot3.text = "o"
+            dot4.text = "o"
         }
     }
     
     // When Edit Changed
     @IBAction func whenKeyboardTap(sender: AnyObject) {
         if countElements(textField.text) == 0 {
-            dot1.text = "-"
-            dot2.text = "-"
-            dot3.text = "-"
-            dot4.text = "-"
+            dot1.text = "o"
+            dot2.text = "o"
+            dot3.text = "o"
+            dot4.text = "o"
         } else if countElements(textField.text) == 1 {
             dot1.text = "•"
-            dot2.text = "-"
-            dot3.text = "-"
-            dot4.text = "-"
+            dot2.text = "o"
+            dot3.text = "o"
+            dot4.text = "o"
         } else if countElements(textField.text) == 2 {
             dot1.text = "•"
             dot2.text = "•"
-            dot3.text = "-"
-            dot4.text = "-"
+            dot3.text = "o"
+            dot4.text = "o"
         } else if countElements(textField.text) == 3 {
             dot1.text = "•"
             dot2.text = "•"
             dot3.text = "•"
-            dot4.text = "-"
+            dot4.text = "o"
         } else if countElements(textField.text) == 4 {
             dot1.text = "•"
             dot2.text = "•"
             dot3.text = "•"
             dot4.text = "•"
+            
+            textField.resignFirstResponder()
             
             let alert : UIAlertController = UIAlertController(title: "Create PIN", message: "Are you sure you use this PIN", preferredStyle: UIAlertControllerStyle.Alert)
             let yes : UIAlertAction = UIAlertAction(
@@ -106,10 +108,10 @@ class CreatePasswordViewController: UIViewController {
                 style: UIAlertActionStyle.Cancel,
                 handler: { action in
                     self.textField.text = ""
-                    self.dot1.text = "-"
-                    self.dot2.text = "-"
-                    self.dot3.text = "-"
-                    self.dot4.text = "-"
+                    self.dot1.text = "o"
+                    self.dot2.text = "o"
+                    self.dot3.text = "o"
+                    self.dot4.text = "o"
                 }
             )
             

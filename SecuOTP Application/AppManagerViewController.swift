@@ -11,7 +11,7 @@ import UIKit
 class AppManagerViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableViewManager: UITableView!
     
-    var item = ["A"]
+    var item = ["SecuOTP", "Facebook", "Dropbox", "Final Fantasy XIV:ARR"]
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -38,8 +38,15 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let alert: UIAlertView = UIAlertView(title: "Hellp", message: "Application Name: \(item[indexPath.row])", delegate: nil, cancelButtonTitle: "OK")
-        
-        alert.show()
+        self.performSegueWithIdentifier("AppManagerToOTP", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AppManagerToOTP" {
+            let viewController: OTPViewController = segue.destinationViewController as OTPViewController
+            let indexPath: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            viewController.appName = item[indexPath.row]
+            
+        }
     }
 }
