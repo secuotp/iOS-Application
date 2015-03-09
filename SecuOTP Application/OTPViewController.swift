@@ -23,6 +23,21 @@ class OTPViewController: UIViewController {
         let topOtpViewConstraint: NSLayoutConstraint = NSLayoutConstraint(item: otpView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: self.view.bounds.height * 0.25)
         
         self.view.addConstraint(topOtpViewConstraint)
+        
+        var time: NSDate = NSDate()
+        time = time.reformatTime(0, minute: 0, second: 30)
+        
+        var format: NSDateFormatter = NSDateFormatter()
+        format.dateFormat = "YYYY-MM-dd HH:mm:ss"
+        println("Time: \(format.stringFromDate(time))")
+        var tmp = Int(time.timeIntervalSince1970) * 1000
+
+        var key: String = "\(Int(tmp))"
+        var data: String = appName!
+        
+        var otp: NSString = data.totp(key, digits: 8)
+        
+        otpCode.text = otp
         // Do any additional setup after loading the view.
     }
     
@@ -35,8 +50,24 @@ class OTPViewController: UIViewController {
         
         if progressBar.progress == 1 {
             progressBar.progress = 0.0
-            var randomText: NSString = "\(arc4random_uniform(99999999 - 10000000) + 10000000)"
-            otpCode.text = "\(randomText)"
+            
+            var time: NSDate = NSDate()
+            time = time.reformatTime(0, minute: 0, second: 30)
+            
+            var format: NSDateFormatter = NSDateFormatter()
+            format.dateFormat = "YYYY-MM-dd HH:mm:ss"
+            println("Time: \(format.stringFromDate(time))")
+            var tmp = Int(time.timeIntervalSince1970) * 1000
+            
+            var key: String = "\(Int(tmp))"
+            var data: String = appName!
+            
+            var otp: NSString = data.totp(key, digits: 8)
+            
+            otpCode.text = otp
+
+            
+            otpCode.text = "\(otp)"
         }
     }
     

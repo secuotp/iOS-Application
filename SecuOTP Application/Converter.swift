@@ -44,3 +44,15 @@ extension String {
     }
     
 }
+
+extension NSDate {
+    func reformatTime(hour:Int, minute:Int, second:Int) -> NSDate {
+        var time: UInt64 = UInt64(self.timeIntervalSince1970 * 1000)
+        var format: UInt64 = UInt64((second * 1000) + (minute * 60 * 1000) + (hour * 60 * 60 * 1000))
+        
+        var formatTime = UInt64(floor(Double(time) / Double(format))) * format
+        var a = Double(formatTime) / 1000
+        var date: NSDate = NSDate(timeIntervalSince1970: a)
+        return date
+    }
+}

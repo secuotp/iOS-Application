@@ -22,28 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
         pageControl.backgroundColor = UIColor.whiteColor()
         
-        var time: NSDate = NSDate()
-        var cal: NSCalendar = NSCalendar.currentCalendar()
-        var const:NSDateComponents = cal.components(NSCalendarUnit.YearCalendarUnit, fromDate: time)
-        const.year = 2015
-        const.month = 1
-        const.day = 1
-        const.hour = 0
-        const.minute = 0
-        const.second = 0
-        time = cal.dateFromComponents(const)!
-        var tmp = time.timeIntervalSince1970 * 1000
-        var key: String = "\(Int(tmp))"
-        var data: String = "1"
-        var cipher: String = data.hmacSHA1(key)
-        
-        var otp: NSString = data.totp(key, digits: 8)
-        
-        println("Time in milis: \(key)\nData: \(data)")
-        println("SHA-1 Cipher: \(key.sha1())")
-        println("HMAC Cipher: \(cipher)")
-        println("TOTP Cipher: \(otp)\n\n")
-        
         sleep(2)
         return true
     }
