@@ -34,8 +34,9 @@ class OTPViewController: UIViewController {
         progressBar.setProgress(progressBar.progress + 0.0033, animated: true)
         
         if progressBar.progress == 1 {
-            progressBar.setProgress(0.0, animated: false)
-            otpCode.text = "\(rand())"
+            progressBar.progress = 0.0
+            var randomText: NSString = "\(arc4random_uniform(99999999 - 10000000) + 10000000)"
+            otpCode.text = "\(randomText)"
         }
     }
     
