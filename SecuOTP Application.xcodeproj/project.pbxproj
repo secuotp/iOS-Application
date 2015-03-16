@@ -11,6 +11,7 @@
 		4705F2C31AAB8532004486FD /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705F2C21AAB8532004486FD /* Converter.swift */; };
 		470B024D1A9F1BED00AD00DB /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B024C1A9F1BED00AD00DB /* Entity.swift */; };
 		470B024F1A9F224300AD00DB /* AppManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B024E1A9F224300AD00DB /* AppManagerViewController.swift */; };
+		470B4B8B1AB76D8600CCE1BD /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B4B8A1AB76D8600CCE1BD /* DatabaseService.swift */; };
 		471426B41A9E65C700D72128 /* ConfirmPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471426B31A9E65C700D72128 /* ConfirmPasswordViewController.swift */; };
 		4714F3C51A9F4EA9005FB8F5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714F3C41A9F4EA9005FB8F5 /* SettingViewController.swift */; };
 		4714F3C71A9F501F005FB8F5 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714F3C61A9F501F005FB8F5 /* OTPViewController.swift */; };
@@ -20,11 +21,13 @@
 		47CA2E281A9DFA9D00AA17E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E271A9DFA9D00AA17E3 /* LoginViewController.swift */; };
 		47CA2E2A1A9DFB6D00AA17E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47CA2E291A9DFB6D00AA17E3 /* CoreData.framework */; };
 		47CA2E2C1A9E021600AA17E3 /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E2B1A9E021600AA17E3 /* CreatePasswordViewController.swift */; };
+		47D48BBC1AB463C5000F4254 /* AddApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D48BBB1AB463C5000F4254 /* AddApplicationViewController.swift */; };
 		47E1B9D71A9C7CC6007FCC8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1B9D61A9C7CC6007FCC8B /* AppDelegate.swift */; };
 		47E1B9DC1A9C7CC6007FCC8B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1B9DB1A9C7CC6007FCC8B /* StartViewController.swift */; };
 		47E1B9DF1A9C7CC6007FCC8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E1B9DD1A9C7CC6007FCC8B /* Main.storyboard */; };
 		47E1B9E11A9C7CC6007FCC8B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47E1B9E01A9C7CC6007FCC8B /* Images.xcassets */; };
 		47E1B9F01A9C7CC6007FCC8B /* SecuOTP_ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1B9EF1A9C7CC6007FCC8B /* SecuOTP_ApplicationTests.swift */; };
+		47F2E72C1AB6D73E00140355 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F2E72B1AB6D73E00140355 /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,7 @@
 		4705F2C21AAB8532004486FD /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		470B024C1A9F1BED00AD00DB /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		470B024E1A9F224300AD00DB /* AppManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManagerViewController.swift; sourceTree = "<group>"; };
+		470B4B8A1AB76D8600CCE1BD /* DatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		471426B31A9E65C700D72128 /* ConfirmPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordViewController.swift; sourceTree = "<group>"; };
 		4714F3C41A9F4EA9005FB8F5 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		4714F3C61A9F501F005FB8F5 /* OTPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 		47CA2E271A9DFA9D00AA17E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		47CA2E291A9DFB6D00AA17E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		47CA2E2B1A9E021600AA17E3 /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
+		47D48BBB1AB463C5000F4254 /* AddApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddApplicationViewController.swift; sourceTree = "<group>"; };
 		47E1B9D11A9C7CC6007FCC8B /* SecuOTP Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SecuOTP Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E1B9D51A9C7CC6007FCC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47E1B9D61A9C7CC6007FCC8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		47E1B9E91A9C7CC6007FCC8B /* SecuOTP ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SecuOTP ApplicationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E1B9EE1A9C7CC6007FCC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47E1B9EF1A9C7CC6007FCC8B /* SecuOTP_ApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecuOTP_ApplicationTests.swift; sourceTree = "<group>"; };
+		47F2E72B1AB6D73E00140355 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +97,21 @@
 			name = crypto;
 			sourceTree = "<group>";
 		};
+		470B4B891AB76D5700CCE1BD /* webservice */ = {
+			isa = PBXGroup;
+			children = (
+				47F2E72B1AB6D73E00140355 /* WebService.swift */,
+				470B4B8A1AB76D8600CCE1BD /* DatabaseService.swift */,
+			);
+			name = webservice;
+			sourceTree = "<group>";
+		};
 		47CA2E1A1A9DE8D000AA17E3 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				4705F2BD1AAB6627004486FD /* crypto */,
 				47CA2E1B1A9DE8D700AA17E3 /* coredata */,
+				470B4B891AB76D5700CCE1BD /* webservice */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -120,6 +136,7 @@
 				470B024E1A9F224300AD00DB /* AppManagerViewController.swift */,
 				4714F3C41A9F4EA9005FB8F5 /* SettingViewController.swift */,
 				4714F3C61A9F501F005FB8F5 /* OTPViewController.swift */,
+				47D48BBB1AB463C5000F4254 /* AddApplicationViewController.swift */,
 				47CA2E261A9DFA8000AA17E3 /* pageviewcontoller */,
 			);
 			name = controller;
@@ -298,6 +315,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				470B4B8B1AB76D8600CCE1BD /* DatabaseService.swift in Sources */,
+				47D48BBC1AB463C5000F4254 /* AddApplicationViewController.swift in Sources */,
 				4714F3C71A9F501F005FB8F5 /* OTPViewController.swift in Sources */,
 				47CA2E281A9DFA9D00AA17E3 /* LoginViewController.swift in Sources */,
 				4714F3C51A9F4EA9005FB8F5 /* SettingViewController.swift in Sources */,
@@ -307,6 +326,7 @@
 				4705F2BF1AAB6652004486FD /* CryptoString.swift in Sources */,
 				47CA2E161A9DE88A00AA17E3 /* ConfigEntity.swift in Sources */,
 				470B024D1A9F1BED00AD00DB /* Entity.swift in Sources */,
+				47F2E72C1AB6D73E00140355 /* WebService.swift in Sources */,
 				4705F2C31AAB8532004486FD /* Converter.swift in Sources */,
 				47CA2E2C1A9E021600AA17E3 /* CreatePasswordViewController.swift in Sources */,
 				471426B41A9E65C700D72128 /* ConfirmPasswordViewController.swift in Sources */,
@@ -428,12 +448,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(BUILT_PRODUCTS_DIR)/../../Headers",
+				);
 				INFOPLIST_FILE = "SecuOTP Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SecuOTP Application-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -446,12 +472,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(BUILT_PRODUCTS_DIR)/../../Headers",
+				);
 				INFOPLIST_FILE = "SecuOTP Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SecuOTP Application-Bridging-Header.h";
 			};
