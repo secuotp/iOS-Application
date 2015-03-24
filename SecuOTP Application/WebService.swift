@@ -20,12 +20,7 @@ enum MediaType: NSString {
     case HTML = "application/html"
 }
 
-class AppName: NSObject {
-    var name: NSString?
-}
-
-
-class WebService: NSObject, NSURLConnectionDelegate, NSURLConnectionDataDelegate{
+class WebService: NSObject {
     
     
     var url: NSString?
@@ -55,45 +50,4 @@ class WebService: NSObject, NSURLConnectionDelegate, NSURLConnectionDataDelegate
         
         return responseData!
     }
-    
-        /*
-    func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse) {
-        self.responseData?.length = 0
-        println("Status Code: \((response as NSHTTPURLResponse).statusCode)")
-        
-    }
-    
-    func connection(connection: NSURLConnection, didReceiveData data: NSData) {
-        self.responseData?.appendData(data)
-    }
-    
-    func connection(connection: NSURLConnection, didFailWithError error: NSError) {
-        println("Failed with error \(error.description)")
-    }
-    
-    func connectionDidFinishLoading(connection: NSURLConnection) {
-        var responseString: NSString = NSString(data: self.responseData!, encoding: NSUTF8StringEncoding)!
-        println(responseString)
-        finished == true
-    }
-    
-    // Bypass SSL
-    func connection(connection: NSURLConnection, willSendRequestForAuthenticationChallenge challenge: NSURLAuthenticationChallenge) {
-        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
-            let baseUrl: NSURL = NSURL(string: self.url!)!
-            if challenge.protectionSpace.host == baseUrl.host {
-                println("Trusting connection to host \(challenge.protectionSpace.host)")
-                challenge.sender.useCredential(NSURLCredential(forTrust: challenge.protectionSpace.serverTrust), forAuthenticationChallenge: challenge)
-            } else {
-                println("Not trusting connection to host \(challenge.protectionSpace.host)")
-            }
-        }
-        challenge.sender.continueWithoutCredentialForAuthenticationChallenge(challenge)
-    }
-
-    
-    func connection(connection: NSURLConnection, canAuthenticateAgainstProtectionSpace protectionSpace: NSURLProtectionSpace) -> Bool {
-        return protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust
-    }
-    */
 }

@@ -28,6 +28,7 @@
 		472F85EA1AC1AD2400021FD6 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 472F85DB1AC1AD2400021FD6 /* CXMLNode_XPathExtensions.m */; };
 		472F85EB1AC1AD2400021FD6 /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 472F85DD1AC1AD2400021FD6 /* CXMLNode.m */; };
 		472F85EC1AC1AD2400021FD6 /* Tidy in Resources */ = {isa = PBXBuildFile; fileRef = 472F85DE1AC1AD2400021FD6 /* Tidy */; };
+		478DE9891AC1E2DC00B01623 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478DE9881AC1E2DC00B01623 /* XMLParser.swift */; };
 		47CA2E161A9DE88A00AA17E3 /* ConfigEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E151A9DE88A00AA17E3 /* ConfigEntity.swift */; };
 		47CA2E191A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E171A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld */; };
 		47CA2E241A9DEBFE00AA17E3 /* ContentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E221A9DEBFE00AA17E3 /* ContentPageViewController.swift */; };
@@ -90,6 +91,7 @@
 		472F85DD1AC1AD2400021FD6 /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CXMLNode.m; path = TouchXML/CXMLNode.m; sourceTree = "<group>"; };
 		472F85DE1AC1AD2400021FD6 /* Tidy */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Tidy; path = TouchXML/Tidy; sourceTree = "<group>"; };
 		472F85DF1AC1AD2400021FD6 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchXML.h; path = TouchXML/TouchXML.h; sourceTree = "<group>"; };
+		478DE9881AC1E2DC00B01623 /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		47C1F3061AA09CE400A21966 /* SecuOTP Application-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SecuOTP Application-Bridging-Header.h"; sourceTree = "<group>"; };
 		47CA2E151A9DE88A00AA17E3 /* ConfigEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigEntity.swift; sourceTree = "<group>"; };
 		47CA2E181A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SecuOTP_Application.xcdatamodel; sourceTree = "<group>"; };
@@ -189,10 +191,19 @@
 			name = TouchXML;
 			sourceTree = "<group>";
 		};
-		47CA2E1A1A9DE8D000AA17E3 /* model */ = {
+		478DE9871AC1E2C200B01623 /* XML Parser */ = {
 			isa = PBXGroup;
 			children = (
 				472F85C51AC1AD1300021FD6 /* TouchXML */,
+				478DE9881AC1E2DC00B01623 /* XMLParser.swift */,
+			);
+			name = "XML Parser";
+			sourceTree = "<group>";
+		};
+		47CA2E1A1A9DE8D000AA17E3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				478DE9871AC1E2C200B01623 /* XML Parser */,
 				472C47891AB866980010EAA2 /* xmlparser */,
 				4705F2BD1AAB6627004486FD /* crypto */,
 				47CA2E1B1A9DE8D700AA17E3 /* coredata */,
@@ -411,6 +422,7 @@
 				47CA2E241A9DEBFE00AA17E3 /* ContentPageViewController.swift in Sources */,
 				472F85E01AC1AD2400021FD6 /* CXHTMLDocument.m in Sources */,
 				472F85E11AC1AD2400021FD6 /* CXMLDocument_CreationExtensions.m in Sources */,
+				478DE9891AC1E2DC00B01623 /* XMLParser.swift in Sources */,
 				47CA2E191A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld in Sources */,
 				47E1B9DC1A9C7CC6007FCC8B /* StartViewController.swift in Sources */,
 				4705F2BF1AAB6652004486FD /* CryptoString.swift in Sources */,
@@ -501,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -537,7 +549,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -556,7 +568,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "SecuOTP Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,7 +593,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "SecuOTP Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

@@ -59,10 +59,26 @@ class AddApplicationViewController: UITableViewController,UISearchBarDelegate, U
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var cell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
         if cell != nil {
-            appInfo = DatabaseService.getAppInfo((cell?.viewWithTag(1) as UILabel).text!)
-            performSegueWithIdentifier("AddAppToAppRegis", sender: self)
+            appInfo = DatabaseService.getAppInfo(list[indexPath.row])
         }
+        var controller: UIAlertController = UIAlertController(title: "Add Service", message: "Please enter your Magration Code", preferredStyle: UIAlertControllerStyle.Alert)
+        var action: UIAlertAction = UIAlertAction(title: "Submit", style: .Default, handler: { (alertAction: UIAlertAction!) -> Void in
+            let codeField: UITextField = controller.textFields![0] as UITextField
+            let code = codeField.text
+            
+            if code == "123" {
+                
+            } else {
+                let alert: UIAlertView = UIAlertView(title: "Add Service Failed", message: "You enter invalid migration code", delegate: nil, cancelButtonTitle: "OK")
+                alert.show()
+            }
+        })
         
+        controller.addTextFieldWithConfigurationHandler({ (textField: UITextField!) -> Void in
+            textField.placeholder = "Migration Code"
+        })
+        controller.addAction(action)
+        self.presentViewController(controller, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

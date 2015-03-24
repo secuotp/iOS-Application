@@ -9,5 +9,15 @@
 import Foundation
 
 class AppInfo: NSObject {
-    var appInfo: AppInfo?
+    var name: NSString?
+    var domain: NSString?
+    var serial: NSString?
+    var desc: NSString?
+    
+    init(name:NSString, domain: NSString, serial: NSString, desc: NSString) {
+        self.name = name
+        self.domain = domain
+        self.serial = serial
+        self.desc = desc
+    }
 }

@@ -13,22 +13,23 @@ class DatabaseService {
     class func getAppName(keyword: NSString) -> [NSString] {
         let service:WebService = WebService(url: ServiceURL.GET_APP_NAME)
         
-        var response: NSData = service.fetchData(keyword, mediaType: MediaType.TEXT)
-        println("Data is \(NSString(data: response, encoding: NSUTF8StringEncoding) as String)")
+        let response: NSData = service.fetchData(keyword, mediaType: MediaType.TEXT)
         
-        var doc: CXMLDocument = CXMLDocument(data: response, options: 0, error: nil)
-
-        var nodes: [CXMLElement] = doc.nodesForXPath("/secuotp/*", error: nil) as [CXMLElement]
-        
-        var result: [NSString] = [NSString]()
-        for i: CXMLElement in nodes {
-            result.append(i.stringValue())
-        }
+        var result: [NSString] = response.parseXML("/secuotp/*") as [NSString]
         return result
     }
     
     class func getAppInfo(keyword: NSString) -> AppInfo {
-        return AppInfo()
+        let service: WebService = WebService(url: ServiceURL.GET_APP_INFO)
+        
+        let response: NSData = service.fetchData(keyword, mediaType: MediaType.TEXT)
+        
+        let doc: CXMLDocument = CXMLDocument(data: response, options: 0, error: nil)
+        
+        var result: [NSString] = response.parseXML("/secuotp/info/*") as [NSString]
+        
+        var info = AppInfo(name: result[0], domain: result[1], serial: result[2], desc: result[3])
+        return info
     }
     
 }
