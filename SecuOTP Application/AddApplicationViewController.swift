@@ -12,7 +12,7 @@ class AddApplicationViewController: UITableViewController,UISearchBarDelegate, U
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var list: [String] = ["A", "B", "C"]
+    var list: [NSString] = [NSString]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +41,16 @@ class AddApplicationViewController: UITableViewController,UISearchBarDelegate, U
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("Cell") as? UITableViewCell
         if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         }
-        var label: UILabel = cell?.viewWithTag(1) as UILabel
-        label.text = list[indexPath.row]
+        
+        var label: UILabel?
+        if tableView == self.searchDisplayController?.searchResultsTableView {
+            label = cell?.textLabel
+        } else {
+            label = cell?.viewWithTag(1) as? UILabel
+        }
+        label?.text = list[indexPath.row]
         
         return cell!
     }
@@ -54,12 +60,17 @@ class AddApplicationViewController: UITableViewController,UISearchBarDelegate, U
         alert.show()
     }
     
-    func filterContentForSearchText(searchText: String) {
+    
+    func filterContentForSearchText(searchText: NSString) {
+        list = DatabaseService.getAppName(searchText)
         
     }
     
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
-        self.filterContentForSearchText(searchString)
+        list = [NSString]()
+        if countElements(searchString) > 0 {
+            self.filterContentForSearchText(searchString)
+        }
         return true
     }
     

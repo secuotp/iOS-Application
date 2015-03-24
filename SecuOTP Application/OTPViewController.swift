@@ -25,12 +25,16 @@ class OTPViewController: UIViewController {
         self.view.addConstraint(topOtpViewConstraint)
         
         var time: NSDate = NSDate()
-        time = time.reformatTime(0, minute: 0, second: 30)
+        var newTime = time.reformatTime(0, minute: 0, second: 30)
+        
+        var remainingTime = abs(newTime.timeIntervalSince1970 - time.timeIntervalSince1970)
+        println("\(remainingTime) Seconds left")
+        progressBar.progress = Float(remainingTime / 30)
         
         var format: NSDateFormatter = NSDateFormatter()
         format.dateFormat = "YYYY-MM-dd HH:mm:ss"
-        println("Time: \(format.stringFromDate(time))")
-        var tmp = Int(time.timeIntervalSince1970) * 1000
+        println("Time: \(format.stringFromDate(newTime))")
+        var tmp = Int(newTime.timeIntervalSince1970) * 1000
 
         var key: String = "\(Int(tmp))"
         var data: String = appName!

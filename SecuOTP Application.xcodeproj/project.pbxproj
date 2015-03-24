@@ -21,6 +21,19 @@
 		47CA2E281A9DFA9D00AA17E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E271A9DFA9D00AA17E3 /* LoginViewController.swift */; };
 		47CA2E2A1A9DFB6D00AA17E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47CA2E291A9DFB6D00AA17E3 /* CoreData.framework */; };
 		47CA2E2C1A9E021600AA17E3 /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E2B1A9E021600AA17E3 /* CreatePasswordViewController.swift */; };
+		47CE28451AC180C600BC93DD /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CE28301AC180C600BC93DD /* CXHTMLDocument.m */; };
+		47CE28461AC180C600BC93DD /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CE28321AC180C600BC93DD /* CXMLDocument_PrivateExtensions.m */; };
+		47CE28471AC180C600BC93DD /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CE28341AC180C600BC93DD /* CXMLDocument.m */; };
+		47CE28481AC180C600BC93DD /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CE28361AC180C600BC93DD /* CXMLElement_CreationExtensions.m */; };
+		47CE28491AC180C600BC93DD /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CE28381AC180C600BC93DD /* CXMLElement_ElementTreeExtensions.m */; };
+		47CE284A1AC180C600BC93DD /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CE283A1AC180C600BC93DD /* CXMLElement.m */; };
+		47CE284B1AC180C600BC93DD /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CE283C1AC180C600BC93DD /* CXMLNamespaceNode.m */; };
+		47CE284C1AC180C600BC93DD /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CE283E1AC180C600BC93DD /* CXMLNode_PrivateExtensions.m */; };
+		47CE284D1AC180C600BC93DD /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CE28401AC180C600BC93DD /* CXMLNode_XPathExtensions.m */; };
+		47CE284E1AC180C600BC93DD /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CE28421AC180C600BC93DD /* CXMLNode.m */; };
+		47CE284F1AC180C600BC93DD /* Tidy in Resources */ = {isa = PBXBuildFile; fileRef = 47CE28431AC180C600BC93DD /* Tidy */; };
+		47CE28541AC180DF00BC93DD /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CE28511AC180DF00BC93DD /* CXMLDocument_CreationExtensions.m */; };
+		47CE28551AC180DF00BC93DD /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CE28531AC180DF00BC93DD /* CXMLNode_CreationExtensions.m */; };
 		47D48BBC1AB463C5000F4254 /* AddApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D48BBB1AB463C5000F4254 /* AddApplicationViewController.swift */; };
 		47E1B9D71A9C7CC6007FCC8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1B9D61A9C7CC6007FCC8B /* AppDelegate.swift */; };
 		47E1B9DC1A9C7CC6007FCC8B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1B9DB1A9C7CC6007FCC8B /* StartViewController.swift */; };
@@ -56,6 +69,32 @@
 		47CA2E271A9DFA9D00AA17E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		47CA2E291A9DFB6D00AA17E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		47CA2E2B1A9E021600AA17E3 /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
+		47CE282F1AC180C600BC93DD /* CXHTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHTMLDocument.h; sourceTree = "<group>"; };
+		47CE28301AC180C600BC93DD /* CXHTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHTMLDocument.m; sourceTree = "<group>"; };
+		47CE28311AC180C600BC93DD /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
+		47CE28321AC180C600BC93DD /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
+		47CE28331AC180C600BC93DD /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
+		47CE28341AC180C600BC93DD /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
+		47CE28351AC180C600BC93DD /* CXMLElement_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_CreationExtensions.h; sourceTree = "<group>"; };
+		47CE28361AC180C600BC93DD /* CXMLElement_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_CreationExtensions.m; sourceTree = "<group>"; };
+		47CE28371AC180C600BC93DD /* CXMLElement_ElementTreeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_ElementTreeExtensions.h; sourceTree = "<group>"; };
+		47CE28381AC180C600BC93DD /* CXMLElement_ElementTreeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_ElementTreeExtensions.m; sourceTree = "<group>"; };
+		47CE28391AC180C600BC93DD /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
+		47CE283A1AC180C600BC93DD /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
+		47CE283B1AC180C600BC93DD /* CXMLNamespaceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNamespaceNode.h; sourceTree = "<group>"; };
+		47CE283C1AC180C600BC93DD /* CXMLNamespaceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNamespaceNode.m; sourceTree = "<group>"; };
+		47CE283D1AC180C600BC93DD /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
+		47CE283E1AC180C600BC93DD /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
+		47CE283F1AC180C600BC93DD /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
+		47CE28401AC180C600BC93DD /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
+		47CE28411AC180C600BC93DD /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
+		47CE28421AC180C600BC93DD /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
+		47CE28431AC180C600BC93DD /* Tidy */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tidy; sourceTree = "<group>"; };
+		47CE28441AC180C600BC93DD /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		47CE28501AC180DF00BC93DD /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
+		47CE28511AC180DF00BC93DD /* CXMLDocument_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_CreationExtensions.m; sourceTree = "<group>"; };
+		47CE28521AC180DF00BC93DD /* CXMLNode_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_CreationExtensions.h; sourceTree = "<group>"; };
+		47CE28531AC180DF00BC93DD /* CXMLNode_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_CreationExtensions.m; sourceTree = "<group>"; };
 		47D48BBB1AB463C5000F4254 /* AddApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddApplicationViewController.swift; sourceTree = "<group>"; };
 		47E1B9D11A9C7CC6007FCC8B /* SecuOTP Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SecuOTP Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E1B9D51A9C7CC6007FCC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,9 +145,18 @@
 			name = webservice;
 			sourceTree = "<group>";
 		};
+		472C47891AB866980010EAA2 /* xmlparser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = xmlparser;
+			sourceTree = "<group>";
+		};
 		47CA2E1A1A9DE8D000AA17E3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				47CE282E1AC17A2100BC93DD /* TouchXML */,
+				472C47891AB866980010EAA2 /* xmlparser */,
 				4705F2BD1AAB6627004486FD /* crypto */,
 				47CA2E1B1A9DE8D700AA17E3 /* coredata */,
 				470B4B891AB76D5700CCE1BD /* webservice */,
@@ -157,6 +205,39 @@
 				47CA2E221A9DEBFE00AA17E3 /* ContentPageViewController.swift */,
 			);
 			name = pageviewcontoller;
+			sourceTree = "<group>";
+		};
+		47CE282E1AC17A2100BC93DD /* TouchXML */ = {
+			isa = PBXGroup;
+			children = (
+				47CE282F1AC180C600BC93DD /* CXHTMLDocument.h */,
+				47CE28301AC180C600BC93DD /* CXHTMLDocument.m */,
+				47CE28311AC180C600BC93DD /* CXMLDocument_PrivateExtensions.h */,
+				47CE28321AC180C600BC93DD /* CXMLDocument_PrivateExtensions.m */,
+				47CE28331AC180C600BC93DD /* CXMLDocument.h */,
+				47CE28341AC180C600BC93DD /* CXMLDocument.m */,
+				47CE28351AC180C600BC93DD /* CXMLElement_CreationExtensions.h */,
+				47CE28361AC180C600BC93DD /* CXMLElement_CreationExtensions.m */,
+				47CE28371AC180C600BC93DD /* CXMLElement_ElementTreeExtensions.h */,
+				47CE28381AC180C600BC93DD /* CXMLElement_ElementTreeExtensions.m */,
+				47CE28391AC180C600BC93DD /* CXMLElement.h */,
+				47CE283A1AC180C600BC93DD /* CXMLElement.m */,
+				47CE283B1AC180C600BC93DD /* CXMLNamespaceNode.h */,
+				47CE283C1AC180C600BC93DD /* CXMLNamespaceNode.m */,
+				47CE283D1AC180C600BC93DD /* CXMLNode_PrivateExtensions.h */,
+				47CE283E1AC180C600BC93DD /* CXMLNode_PrivateExtensions.m */,
+				47CE283F1AC180C600BC93DD /* CXMLNode_XPathExtensions.h */,
+				47CE28401AC180C600BC93DD /* CXMLNode_XPathExtensions.m */,
+				47CE28411AC180C600BC93DD /* CXMLNode.h */,
+				47CE28421AC180C600BC93DD /* CXMLNode.m */,
+				47CE28431AC180C600BC93DD /* Tidy */,
+				47CE28441AC180C600BC93DD /* TouchXML.h */,
+				47CE28501AC180DF00BC93DD /* CXMLDocument_CreationExtensions.h */,
+				47CE28511AC180DF00BC93DD /* CXMLDocument_CreationExtensions.m */,
+				47CE28521AC180DF00BC93DD /* CXMLNode_CreationExtensions.h */,
+				47CE28531AC180DF00BC93DD /* CXMLNode_CreationExtensions.m */,
+			);
+			name = TouchXML;
 			sourceTree = "<group>";
 		};
 		47E1B9C81A9C7CC6007FCC8B = {
@@ -296,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47CE284F1AC180C600BC93DD /* Tidy in Resources */,
 				47E1B9DF1A9C7CC6007FCC8B /* Main.storyboard in Resources */,
 				47E1B9E11A9C7CC6007FCC8B /* Images.xcassets in Resources */,
 			);
@@ -320,16 +402,28 @@
 				4714F3C71A9F501F005FB8F5 /* OTPViewController.swift in Sources */,
 				47CA2E281A9DFA9D00AA17E3 /* LoginViewController.swift in Sources */,
 				4714F3C51A9F4EA9005FB8F5 /* SettingViewController.swift in Sources */,
+				47CE284B1AC180C600BC93DD /* CXMLNamespaceNode.m in Sources */,
 				47CA2E241A9DEBFE00AA17E3 /* ContentPageViewController.swift in Sources */,
+				47CE284A1AC180C600BC93DD /* CXMLElement.m in Sources */,
 				47CA2E191A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld in Sources */,
 				47E1B9DC1A9C7CC6007FCC8B /* StartViewController.swift in Sources */,
 				4705F2BF1AAB6652004486FD /* CryptoString.swift in Sources */,
+				47CE284D1AC180C600BC93DD /* CXMLNode_XPathExtensions.m in Sources */,
 				47CA2E161A9DE88A00AA17E3 /* ConfigEntity.swift in Sources */,
+				47CE28451AC180C600BC93DD /* CXHTMLDocument.m in Sources */,
 				470B024D1A9F1BED00AD00DB /* Entity.swift in Sources */,
 				47F2E72C1AB6D73E00140355 /* WebService.swift in Sources */,
+				47CE284C1AC180C600BC93DD /* CXMLNode_PrivateExtensions.m in Sources */,
+				47CE28491AC180C600BC93DD /* CXMLElement_ElementTreeExtensions.m in Sources */,
 				4705F2C31AAB8532004486FD /* Converter.swift in Sources */,
 				47CA2E2C1A9E021600AA17E3 /* CreatePasswordViewController.swift in Sources */,
+				47CE28481AC180C600BC93DD /* CXMLElement_CreationExtensions.m in Sources */,
+				47CE28541AC180DF00BC93DD /* CXMLDocument_CreationExtensions.m in Sources */,
+				47CE28461AC180C600BC93DD /* CXMLDocument_PrivateExtensions.m in Sources */,
+				47CE28471AC180C600BC93DD /* CXMLDocument.m in Sources */,
+				47CE284E1AC180C600BC93DD /* CXMLNode.m in Sources */,
 				471426B41A9E65C700D72128 /* ConfirmPasswordViewController.swift in Sources */,
+				47CE28551AC180DF00BC93DD /* CXMLNode_CreationExtensions.m in Sources */,
 				470B024F1A9F224300AD00DB /* AppManagerViewController.swift in Sources */,
 				47E1B9D71A9C7CC6007FCC8B /* AppDelegate.swift in Sources */,
 			);
@@ -450,16 +544,17 @@
 				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					/usr/include/libxml2,
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(BUILT_PRODUCTS_DIR)/../../Headers",
 				);
 				INFOPLIST_FILE = "SecuOTP Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SecuOTP Application-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -474,16 +569,17 @@
 				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					/usr/include/libxml2,
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(BUILT_PRODUCTS_DIR)/../../Headers",
 				);
 				INFOPLIST_FILE = "SecuOTP Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SecuOTP Application-Bridging-Header.h";
 			};

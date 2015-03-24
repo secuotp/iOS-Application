@@ -8,12 +8,23 @@
 
 import Foundation
 
-class DatabaseService: NSObject {
+class DatabaseService {
     
     class func getAppName(keyword: NSString) -> [NSString] {
-        let service:WebService = WebService(url: ServiceURL.GET_APP_NAME.rawValue)
-        var data: NSData = service.fetchData(keyword)
+        let service:WebService = WebService(url: ServiceURL.GET_APP_NAME)
         
-        return [NSString]()
+        var response: NSData = service.fetchData(keyword, mediaType: MediaType.TEXT)
+        println("Data is \(NSString(data: response, encoding: NSUTF8StringEncoding) as String)")
+        
+        var doc: CXMLDocument = CXMLDocument(data: response, options: 0, error: nil)
+
+        var nodes: [CXMLElement] = doc.nodesForXPath("/secuotp/*", error: nil) as [CXMLElement]
+        
+        var result: [NSString] = [NSString]()
+        for i: CXMLElement in nodes {
+            result.append(i.stringValue())
+        }
+        return result
     }
+    
 }

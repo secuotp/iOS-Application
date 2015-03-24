@@ -3,3 +3,4 @@
 //
 
 #import <CommonCrypto/CommonHMAC.h>
+#import "TouchXML.h"
