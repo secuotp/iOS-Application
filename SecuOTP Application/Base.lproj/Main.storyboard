@@ -224,6 +224,7 @@
                     <connections>
                         <outlet property="searchBar" destination="aMV-dp-VHX" id="tet-z1-ehM"/>
                         <outlet property="searchDisplayController" destination="eTi-0U-YM5" id="XWi-2u-iEg"/>
+                        <segue destination="0jr-y7-LU7" kind="show" identifier="AddAppToAppRegis" id="pXp-A0-qn7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klb-LT-32k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,6 +239,25 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="24" y="2012"/>
+        </scene>
+        <!--Appplication Register View Controller-->
+        <scene sceneID="c9i-R5-kSX">
+            <objects>
+                <viewController id="0jr-y7-LU7" customClass="AppplicationRegisterViewController" customModule="SecuOTP_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cqr-lo-YhP"/>
+                        <viewControllerLayoutGuide type="bottom" id="gn6-wZ-zbx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QAF-by-BNB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GJo-mn-tUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="2012"/>
         </scene>
         <!--Confirm Password View Controller-->
         <scene sceneID="kH6-DE-WUj">

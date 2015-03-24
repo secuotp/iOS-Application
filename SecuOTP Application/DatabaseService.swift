@@ -27,4 +27,8 @@ class DatabaseService {
         return result
     }
     
+    class func getAppInfo(keyword: NSString) -> AppInfo {
+        return AppInfo()
+    }
+    
 }

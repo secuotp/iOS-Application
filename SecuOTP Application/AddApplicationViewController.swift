@@ -13,6 +13,7 @@ class AddApplicationViewController: UITableViewController,UISearchBarDelegate, U
     @IBOutlet weak var searchBar: UISearchBar!
     
     var list: [NSString] = [NSString]()
+    var appInfo: AppInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +57,20 @@ class AddApplicationViewController: UITableViewController,UISearchBarDelegate, U
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let alert: UIAlertView = UIAlertView(title: "Test", message: "Good", delegate: nil, cancelButtonTitle: "OK")
-        alert.show()
+        var cell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
+        if cell != nil {
+            appInfo = DatabaseService.getAppInfo((cell?.viewWithTag(1) as UILabel).text!)
+            performSegueWithIdentifier("AddAppToAppRegis", sender: self)
+        }
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddAppToAppRegis" {
+            var view = segue.destinationViewController as AppplicationRegisterViewController
+            view.appInfo = self.appInfo
+        }
+
     }
     
     
