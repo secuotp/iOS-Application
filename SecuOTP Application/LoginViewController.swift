@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
     // Constraint Only
     @IBOutlet weak var logo: UIImageView!
     
+    var orangeColor: UIColor = UIColor(red: CGFloat(238.0/255), green: CGFloat(175.0/255), blue: CGFloat(72.0/255), alpha: 1)
+    var greyColor: UIColor = UIColor(red: CGFloat(216.0/255), green: CGFloat(216.0/255), blue: CGFloat(216.0/255), alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,33 +53,34 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    
     @IBAction func whenKeyboardTap(sender: AnyObject) {
         if countElements(textField.text) == 0 {
-            dot1.text = "-"
-            dot2.text = "-"
-            dot3.text = "-"
-            dot4.text = "-"
+            dot1.textColor = greyColor
+            dot2.textColor = greyColor
+            dot3.textColor = greyColor
+            dot4.textColor = greyColor
         } else if countElements(textField.text) == 1 {
-            dot1.text = "•"
-            dot2.text = "-"
-            dot3.text = "-"
-            dot4.text = "-"
+            dot1.textColor = orangeColor
+            dot2.textColor = greyColor
+            dot3.textColor = greyColor
+            dot4.textColor = greyColor
         } else if countElements(textField.text) == 2 {
-            dot1.text = "•"
-            dot2.text = "•"
-            dot3.text = "-"
-            dot4.text = "-"
+            dot1.textColor = orangeColor
+            dot2.textColor = orangeColor
+            dot3.textColor = greyColor
+            dot4.textColor = greyColor
         } else if countElements(textField.text) == 3 {
-            dot1.text = "•"
-            dot2.text = "•"
-            dot3.text = "•"
-            dot4.text = "-"
+            dot1.textColor = orangeColor
+            dot2.textColor = orangeColor
+            dot3.textColor = orangeColor
+            dot4.textColor = greyColor
         } else if countElements(textField.text) == 4 {
-            dot1.text = "•"
-            dot2.text = "•"
-            dot3.text = "•"
-            dot4.text = "•"
+            dot1.textColor = orangeColor
+            dot2.textColor = orangeColor
+            dot3.textColor = orangeColor
+            dot4.textColor = orangeColor
             
             textField.resignFirstResponder()
             
@@ -91,10 +94,10 @@ class LoginViewController: UIViewController {
                 let alert: UIAlertView = UIAlertView(title: "Login Failed", message: "Your PIN is Incorrect", delegate: nil, cancelButtonTitle: "OK")
                 alert.show()
                 
-                dot1.text = "-"
-                dot2.text = "-"
-                dot3.text = "-"
-                dot4.text = "-"
+                dot1.textColor = greyColor
+                dot2.textColor = greyColor
+                dot3.textColor = greyColor
+                dot4.textColor = greyColor
                 textField.text = ""
                 
                 textField.becomeFirstResponder()

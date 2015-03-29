@@ -11,6 +11,7 @@ import Foundation
 enum ServiceURL: NSString {
     case GET_APP_NAME = "http://128.199.82.168/SecuOTP-Service/database/app-name"
     case GET_APP_INFO = "http://128.199.82.168/SecuOTP-Service/database/app-info"
+    case APPROVE_MIGRATE = "http://128.199.82.168/SecuOTP-Service/function/approve"
     case TIME_SYNC = "http://128.199.82.168/SecuOTP-Service/time/sync"
 }
 
@@ -32,7 +33,7 @@ class WebService: NSObject {
     
     var finished = false
     
-    func fetchData(input: NSString, mediaType: MediaType) -> NSData {
+    func fetchData(input: NSString, mediaType: MediaType) -> NSData? {
         
         responseData = NSMutableData()
         
@@ -48,6 +49,6 @@ class WebService: NSObject {
         var error: NSError?
         responseData = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
         
-        return responseData!
+        return responseData
     }
 }

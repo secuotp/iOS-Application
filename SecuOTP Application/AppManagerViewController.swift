@@ -7,18 +7,33 @@
 //
 
 import UIKit
+import CoreData
 
 class AppManagerViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableViewManager: UITableView!
     
-    var item = ["SecuOTP", "Facebook", "Dropbox", "Final Fantasy XIV:ARR"]
+    var item: [NSString] = [NSString]()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        item = [NSString]()
+        
+        let siteList: SiteEntity = SiteEntity()
+        let data:[NSManagedObject] = siteList.fetch()
+        
+        for i: NSManagedObject in data {
+            var siteName: AnyObject? = i .valueForKey("site_name")
+            if siteName != nil {
+                item.append(i.valueForKey("site_name") as NSString)
+            }
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.item.count

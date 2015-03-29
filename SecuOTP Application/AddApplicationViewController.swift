@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddApplicationViewController: UITableViewController,UISearchBarDelegate, UISearchDisplayDelegate {
+class AddApplicationViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -61,37 +61,41 @@ class AddApplicationViewController: UITableViewController,UISearchBarDelegate, U
         if cell != nil {
             appInfo = DatabaseService.getAppInfo(list[indexPath.row])
         }
-        var controller: UIAlertController = UIAlertController(title: "Add Service", message: "Please enter your Magration Code", preferredStyle: UIAlertControllerStyle.Alert)
+        var controller: UIAlertController = UIAlertController(title: appInfo?.name, message: "Please enter your Magration Code", preferredStyle: UIAlertControllerStyle.Alert)
         var action: UIAlertAction = UIAlertAction(title: "Submit", style: .Default, handler: { (alertAction: UIAlertAction!) -> Void in
             let codeField: UITextField = controller.textFields![0] as UITextField
             let code = codeField.text
             
-            if code == "123" {
+            if DatabaseService.approveMigrateService(code) {
+                let alert: UIAlertView = UIAlertView(title: "Add Application Success", message: "Congratulation you successfully migrate \(self.appInfo?.name!) into your application", delegate: nil, cancelButtonTitle: "OK")
+                alert.show()
                 
+                self.navigationController?.popViewControllerAnimated(true)
             } else {
-                let alert: UIAlertView = UIAlertView(title: "Add Service Failed", message: "You enter invalid migration code", delegate: nil, cancelButtonTitle: "OK")
+                let alert: UIAlertView = UIAlertView(title: "Migration Failed", message: "Incorrect Migration Code", delegate: nil, cancelButtonTitle: "OK")
                 alert.show()
             }
         })
         
+        var cancel: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
         controller.addTextFieldWithConfigurationHandler({ (textField: UITextField!) -> Void in
             textField.placeholder = "Migration Code"
         })
+        
+        cell?.setSelected(false, animated: true)
+        
         controller.addAction(action)
+        controller.addAction(cancel)
         self.presentViewController(controller, animated: true, completion: nil)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "AddAppToAppRegis" {
-            var view = segue.destinationViewController as AppplicationRegisterViewController
-            view.appInfo = self.appInfo
-        }
-
     }
     
     
     func filterContentForSearchText(searchText: NSString) {
-        list = DatabaseService.getAppName(searchText)
+        let tmp: [NSString]? = DatabaseService.getAppName(searchText)!
+        if tmp != nil {
+            list = tmp!
+        }
         
     }
     

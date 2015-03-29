@@ -17,16 +17,15 @@ extension NSData {
             return nil
         } else {
             var parseError: NSError?
-            var nodes: [CXMLElement] = document.nodesForXPath(xPath, error: &parseError) as [CXMLElement]
+            var nodes: NSArray = document.nodesForXPath(xPath, error: &parseError) as [CXMLElement]
         
             if parseError != nil {
                 return nil
             } else {
                 var result: [AnyObject] = [AnyObject]()
-                for i in nodes {
+                for i: CXMLNode in nodes as AnyObject as [CXMLNode] {
                     result.append(i.stringValue())
                 }
-                
                 return result
             }
         }
