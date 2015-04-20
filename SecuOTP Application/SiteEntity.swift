@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-enum SiteEntityKey: NSString {
+enum SiteEntityKey: String {
     case SITE_NAME = "site_name"
     case SITE_DOMAIN = "site_domain"
     case SITE_SERIAL = "site_serial"
@@ -18,6 +18,7 @@ enum SiteEntityKey: NSString {
     case USER_REMOVAL = "user_removal"
     case OTP_LENGTH = "otp_length"
     case OTP_PATTERN = "otp_pattern"
+    case SITE_IMAGE = "site_image"
 }
 
 class SiteEntity: NSObject {
@@ -36,11 +37,12 @@ class SiteEntity: NSObject {
     var userRemoval: NSString?
     var otpLength: NSString?
     var otpPattern: NSString?
+    var siteImage: NSString?
     
     override init(){
-        context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+        context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
         
-        entity = NSEntityDescription.entityForName(entityName, inManagedObjectContext: context)!
+        entity = NSEntityDescription.entityForName(entityName as String, inManagedObjectContext: context)!
         object = NSManagedObject(entity: entity, insertIntoManagedObjectContext: context)
     }
     
@@ -49,9 +51,11 @@ class SiteEntity: NSObject {
         object.setValue(siteDomain, forKey: SiteEntityKey.SITE_DOMAIN.rawValue)
         object.setValue(siteSerial, forKey: SiteEntityKey.SITE_SERIAL.rawValue)
         object.setValue(siteDescription, forKey: SiteEntityKey.SITE_DESC.rawValue)
+        object.setValue(siteImage, forKey: SiteEntityKey.SITE_IMAGE.rawValue)
         object.setValue(userSerial, forKey: SiteEntityKey.USER_SERIAL.rawValue)
         object.setValue(userRemoval, forKey: SiteEntityKey.USER_REMOVAL.rawValue)
         object.setValue(otpLength, forKey: SiteEntityKey.OTP_LENGTH.rawValue)
+        object.setValue(otpPattern, forKey: SiteEntityKey.OTP_PATTERN.rawValue)
         object.setValue(otpPattern, forKey: SiteEntityKey.OTP_PATTERN.rawValue)
         
         var error : NSError?
@@ -63,30 +67,46 @@ class SiteEntity: NSObject {
     // Start at 1 row
     func recordCount() -> NSInteger {
         let array = self.fetch()
-        return array.count
+        if array.count > 0 {
+            return array.count
+        } else {
+            return 0
+        }
     }
     
     // Fetch all Records in SqlLite (Config Entity)
-    func fetch() -> [NSManagedObject] {
-        let fetchRequest : NSFetchRequest = NSFetchRequest(entityName: entityName)
+    func fetch() -> [Site] {
+        let fetchRequest : NSFetchRequest = NSFetchRequest(entityName: entityName as String)
         var error : NSError?
-        let fetchResults : [NSManagedObject] = context.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]!
+        let fetchResults : NSArray? = context.executeFetchRequest(fetchRequest, error: &error) as! [NSManagedObject]!
         
-        return fetchResults
-    }
-    
-    func getValueFromKey(key: NSString) -> NSMutableArray {
-        let dataArray: [NSManagedObject] = self.fetch()
-        
-        let data: NSMutableArray = NSMutableArray(capacity: dataArray.count)
-        
-        for var i = 0; i < dataArray.count; i++ {
-            
-            if dataArray[i].valueForKey(key) != nil {
-                data.addObject(dataArray[i].valueForKey(key) as NSString)
+        var resultObject: [Site] = [Site]()
+        if fetchResults != nil{
+            for i: NSManagedObject in (fetchResults as! [NSManagedObject]) {
+                var site = Site()
+                site.siteName = i.valueForKey(SiteEntityKey.SITE_NAME.rawValue) as! NSString?
+                site.siteDomain = i.valueForKey(SiteEntityKey.SITE_DOMAIN.rawValue) as! NSString?
+                site.siteSerial = i.valueForKey(SiteEntityKey.SITE_SERIAL.rawValue) as! NSString?
+                site.siteDescription = i.valueForKey(SiteEntityKey.SITE_DESC.rawValue) as! NSString?
+                
+                var imgString: NSString? = (i.valueForKey(SiteEntityKey.SITE_IMAGE.rawValue) as! NSString?)
+                if imgString != nil {
+                    site.siteImage = UIImage(data: imgString!.dataUsingEncoding(NSUTF8StringEncoding)!)
+                }
+                site.userSerial = i.valueForKey(SiteEntityKey.USER_SERIAL.rawValue) as! NSString?
+                site.userRemoval = i.valueForKey(SiteEntityKey.USER_REMOVAL.rawValue) as! NSString?
+                
+                var length: NSString? = i.valueForKey(SiteEntityKey.OTP_LENGTH.rawValue) as! NSString?
+                if length != nil {
+                    site.otpLength = Int(length!.intValue)
+                }
+                site.otpPattern = i.valueForKey(SiteEntityKey.OTP_PATTERN.rawValue) as! NSString?
+                
+                resultObject.append(site)
             }
+            return resultObject
+        } else {
+            return [Site]()
         }
-        return data
     }
-    
 }

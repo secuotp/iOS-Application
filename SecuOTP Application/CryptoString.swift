@@ -20,17 +20,17 @@ extension String {
         for byte in digest {
             output.appendFormat("%02x", byte)
         }
-        return output
+        return output as String
     }
     
     func hmacSHA1(key: NSString) -> String {
         var useKey: String = ""
         if key.length > 64 {
-            useKey = key.sha1()
+            useKey = key.sha1() as String
         }else if key.length < 64 {
-            useKey = key + "\((0x00 * (64 - key.length)))"
+            useKey = (key as String) + "\((0x00 * (64 - key.length)))"
         } else {
-            useKey = key
+            useKey = key as String
         }
         
         var oKeyPad = (0x5c * 64) ^ useKey.toInt()!
@@ -44,16 +44,16 @@ extension String {
     
     func totp(time: NSString, digits: Int) -> String {
         var result: NSString? = nil
-        var usingKey: String = time
+        var usingKey: String = time as String
         let power: [Int] = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000]
         
-        while countElements(usingKey) < 16 {
+        while count(usingKey) < 16 {
             usingKey = "0" + usingKey
         }
         
         var hmac: NSString = self.hmacSHA1(usingKey)
-        var hmacByte: [Byte] = (hmac as String).toByteArray()
-        var offset: Int = Int(hmacByte[countElements(hmacByte) - 1]) & 0xF
+        var hmacByte: [UInt8] = (hmac as String).toByteArray()
+        var offset: Int = Int(hmacByte[count(hmacByte) - 1]) & 0xF
         let binA: Int = (Int(hmacByte[offset]) & 0x7F) << 24
         let binB: Int = (Int(hmacByte[offset + 1]) & 0xFF) << 16
         let binC: Int = (Int(hmacByte[offset + 2]) & 0xFF) << 8
@@ -63,9 +63,9 @@ extension String {
         let otp = "\(binary % power[digits])"
         result = otp
         while result?.length < digits {
-            result = "0" + result!
+            result = "0" + (result! as String)
         }
-        return result!
+        return result! as String
     }
 }
 
@@ -84,11 +84,11 @@ extension NSString {
     func hmacSHA1(key: NSString) -> String {
         var useKey: String = ""
         if key.length > 64 {
-            useKey = key.sha1()
+            useKey = key.sha1() as String
         }else if key.length < 64 {
-            useKey = key + "\((0x00 * (64 - key.length)))"
+            useKey = (key as String) + "\((0x00 * (64 - key.length)))"
         } else {
-            useKey = key
+            useKey = key as String
         }
         
         var oKeyPad = (0x5c * 64) ^ useKey.toInt()!
@@ -97,7 +97,7 @@ extension NSString {
         var oKeyString: String = oKeyPad.toHexString()
         var iKeyString: String = iKeyPad.toHexString()
         
-        return (oKeyString + (iKeyString + self).sha1()).sha1()
+        return (oKeyString + (iKeyString + (self as String)).sha1()).sha1()
     }
 
 }

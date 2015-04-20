@@ -39,9 +39,9 @@ class WebService: NSObject {
         
         var configulation:NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         var session:NSURLSession = NSURLSession(configuration: configulation)
-        var request: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: url!)!)
+        var request: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: url! as String)!)
         request.HTTPMethod = "POST"
-        request.setValue(mediaType.rawValue, forHTTPHeaderField: "Content-Type")
+        request.setValue(mediaType.rawValue as String, forHTTPHeaderField: "Content-Type")
         
         request.HTTPBody = "request=\(input)".dataUsingEncoding(NSUTF8StringEncoding)
         

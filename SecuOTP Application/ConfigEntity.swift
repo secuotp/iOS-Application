@@ -20,9 +20,9 @@ class ConfigEntity: NSObject, Entity {
     var password: NSString?
     
     override init(){
-        context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+        context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
         
-        entity = NSEntityDescription.entityForName(entityName, inManagedObjectContext: context)!
+        entity = NSEntityDescription.entityForName(entityName as String, inManagedObjectContext: context)!
         object = NSManagedObject(entity: entity, insertIntoManagedObjectContext: context)
     }
     
@@ -41,9 +41,9 @@ class ConfigEntity: NSObject, Entity {
     
     // Fetch all Records in SqlLite (Config Entity)
     func fetch() -> [NSManagedObject] {
-        let fetchRequest : NSFetchRequest = NSFetchRequest(entityName: entityName)
+        let fetchRequest : NSFetchRequest = NSFetchRequest(entityName: entityName as String)
         var error : NSError?
-        let fetchResults : [NSManagedObject] = context.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]!
+        let fetchResults : [NSManagedObject] = context.executeFetchRequest(fetchRequest, error: &error) as! [NSManagedObject]!
         
         return fetchResults
     }
@@ -55,8 +55,8 @@ class ConfigEntity: NSObject, Entity {
         
         for var i = 0; i < dataArray.count; i++ {
             
-            if dataArray[i].valueForKey(key) != nil {
-                data.addObject(dataArray[i].valueForKey(key) as NSString)
+            if dataArray[i].valueForKey(key as String) != nil {
+                data.addObject(dataArray[i].valueForKey(key as String) as! NSString)
             }
         }
         return data

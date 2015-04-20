@@ -17,7 +17,7 @@ class StartViewController: UIViewController , UIPageViewControllerDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as UIPageViewController
+        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         pageViewController?.dataSource = self
         
         let startController : ContentPageViewController = self.viewControllerAtIndex(0)!
@@ -34,7 +34,7 @@ class StartViewController: UIViewController , UIPageViewControllerDataSource {
     }
 
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        var index : Int = (viewController as ContentPageViewController).pageIndex!
+        var index : Int = (viewController as! ContentPageViewController).pageIndex!
         
         if index == 0 || index == NSNotFound {
             return nil
@@ -43,7 +43,7 @@ class StartViewController: UIViewController , UIPageViewControllerDataSource {
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        var index : Int = (viewController as ContentPageViewController).pageIndex!
+        var index : Int = (viewController as! ContentPageViewController).pageIndex!
 
         if index == NSNotFound{
             return nil
@@ -60,7 +60,7 @@ class StartViewController: UIViewController , UIPageViewControllerDataSource {
             return nil
         }
         // Create a new view controller and pass suitable data.
-        let contentPageViewController : ContentPageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ContentPageViewController") as ContentPageViewController!
+        let contentPageViewController : ContentPageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ContentPageViewController") as! ContentPageViewController!
         contentPageViewController.color = self.color[index]
         contentPageViewController.pageIndex = index
         return contentPageViewController

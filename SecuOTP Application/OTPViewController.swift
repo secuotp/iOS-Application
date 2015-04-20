@@ -18,7 +18,7 @@ class OTPViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = appName
+        self.navigationItem.title = appName! as String
         
         let topOtpViewConstraint: NSLayoutConstraint = NSLayoutConstraint(item: otpView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: self.view.bounds.height * 0.25)
         
@@ -37,11 +37,11 @@ class OTPViewController: UIViewController {
         var tmp = Int(newTime.timeIntervalSince1970) * 1000
 
         var key: String = "\(Int(tmp))"
-        var data: String = appName!
+        var data: String = appName! as String
         
         var otp: NSString = data.totp(key, digits: 8)
         
-        otpCode.text = otp
+        otpCode.text = otp as String
         // Do any additional setup after loading the view.
     }
     
@@ -64,11 +64,11 @@ class OTPViewController: UIViewController {
             var tmp = Int(time.timeIntervalSince1970) * 1000
             
             var key: String = "\(Int(tmp))"
-            var data: String = appName!
+            var data: String = appName! as String
             
             var otp: NSString = data.totp(key, digits: 8)
             
-            otpCode.text = otp
+            otpCode.text = otp as String
 
             
             otpCode.text = "\(otp)"

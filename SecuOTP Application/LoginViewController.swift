@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var dot3: UILabel!
     @IBOutlet weak var dot4: UILabel!
     // Constraint Only
-    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var blackView: UIView!
     
     var orangeColor: UIColor = UIColor(red: CGFloat(238.0/255), green: CGFloat(175.0/255), blue: CGFloat(72.0/255), alpha: 1)
     var greyColor: UIColor = UIColor(red: CGFloat(216.0/255), green: CGFloat(216.0/255), blue: CGFloat(216.0/255), alpha: 1)
@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         let topLogoConstraint: NSLayoutConstraint = NSLayoutConstraint(
-            item: logo,
+            item: blackView,
             attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self.view,
@@ -56,27 +56,27 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func whenKeyboardTap(sender: AnyObject) {
-        if countElements(textField.text) == 0 {
+        if count(textField.text) == 0 {
             dot1.textColor = greyColor
             dot2.textColor = greyColor
             dot3.textColor = greyColor
             dot4.textColor = greyColor
-        } else if countElements(textField.text) == 1 {
+        } else if count(textField.text) == 1 {
             dot1.textColor = orangeColor
             dot2.textColor = greyColor
             dot3.textColor = greyColor
             dot4.textColor = greyColor
-        } else if countElements(textField.text) == 2 {
+        } else if count(textField.text) == 2 {
             dot1.textColor = orangeColor
             dot2.textColor = orangeColor
             dot3.textColor = greyColor
             dot4.textColor = greyColor
-        } else if countElements(textField.text) == 3 {
+        } else if count(textField.text) == 3 {
             dot1.textColor = orangeColor
             dot2.textColor = orangeColor
             dot3.textColor = orangeColor
             dot4.textColor = greyColor
-        } else if countElements(textField.text) == 4 {
+        } else if count(textField.text) == 4 {
             dot1.textColor = orangeColor
             dot2.textColor = orangeColor
             dot3.textColor = orangeColor
@@ -87,8 +87,8 @@ class LoginViewController: UIViewController {
             let config: ConfigEntity = ConfigEntity()
             let data: NSMutableArray = config.getValueFromKey("password")
             
-            println("Data: \(data[0] as NSString)")
-            if (data[0] as NSString) == textField.text {
+            println("Data: \(data[0] as! NSString)")
+            if (data[0] as! NSString) == textField.text {
                 self.performSegueWithIdentifier("LoginToManageApp", sender: self)
             } else {
                 let alert: UIAlertView = UIAlertView(title: "Login Failed", message: "Your PIN is Incorrect", delegate: nil, cancelButtonTitle: "OK")

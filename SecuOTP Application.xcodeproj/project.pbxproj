@@ -29,6 +29,7 @@
 		472F85EB1AC1AD2400021FD6 /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 472F85DD1AC1AD2400021FD6 /* CXMLNode.m */; };
 		472F85EC1AC1AD2400021FD6 /* Tidy in Resources */ = {isa = PBXBuildFile; fileRef = 472F85DE1AC1AD2400021FD6 /* Tidy */; };
 		478DE9891AC1E2DC00B01623 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478DE9881AC1E2DC00B01623 /* XMLParser.swift */; };
+		47C4C7EF1AC9525B00FC95C2 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C4C7EE1AC9525B00FC95C2 /* Site.swift */; };
 		47CA2E161A9DE88A00AA17E3 /* ConfigEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E151A9DE88A00AA17E3 /* ConfigEntity.swift */; };
 		47CA2E191A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E171A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld */; };
 		47CA2E241A9DEBFE00AA17E3 /* ContentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E221A9DEBFE00AA17E3 /* ContentPageViewController.swift */; };
@@ -93,6 +94,7 @@
 		472F85DF1AC1AD2400021FD6 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchXML.h; path = TouchXML/TouchXML.h; sourceTree = "<group>"; };
 		478DE9881AC1E2DC00B01623 /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		47C1F3061AA09CE400A21966 /* SecuOTP Application-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SecuOTP Application-Bridging-Header.h"; sourceTree = "<group>"; };
+		47C4C7EE1AC9525B00FC95C2 /* Site.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		47CA2E151A9DE88A00AA17E3 /* ConfigEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigEntity.swift; sourceTree = "<group>"; };
 		47CA2E181A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SecuOTP_Application.xcdatamodel; sourceTree = "<group>"; };
 		47CA2E221A9DEBFE00AA17E3 /* ContentPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPageViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				47CA2E1B1A9DE8D700AA17E3 /* coredata */,
 				470B4B891AB76D5700CCE1BD /* webservice */,
 				47CE28561AC1A45E00BC93DD /* AppInfo.swift */,
+				47C4C7EE1AC9525B00FC95C2 /* Site.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				470B024F1A9F224300AD00DB /* AppManagerViewController.swift in Sources */,
 				47FE002F1AC809F100D83C0C /* SiteEntity.swift in Sources */,
 				47E1B9D71A9C7CC6007FCC8B /* AppDelegate.swift in Sources */,
+				47C4C7EF1AC9525B00FC95C2 /* Site.swift in Sources */,
 				472F85E61AC1AD2400021FD6 /* CXMLElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

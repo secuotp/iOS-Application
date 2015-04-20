@@ -16,7 +16,7 @@ class DatabaseService {
         let response: NSData? = service.fetchData(keyword, mediaType: MediaType.TEXT)
         
         if response != nil {
-            var result: [NSString] = response?.parseXML("/secuotp/*") as [NSString]
+            var result: [NSString] = response?.parseXML("/secuotp/*") as! [NSString]
             return result
         } else {
             return nil
@@ -29,7 +29,7 @@ class DatabaseService {
             let response: NSData? = service.fetchData(keyword, mediaType: MediaType.TEXT)!
         
             if response != nil {
-                var result: [NSString] = response?.parseXML("/secuotp/info/*") as [NSString]
+                var result: [NSString] = response?.parseXML("/secuotp/info/*") as! [NSString]
         
                 var info = AppInfo(name: result[0], domain: result[1], serial: result[2], desc: result[3])
                 return info
@@ -43,10 +43,10 @@ class DatabaseService {
         let response: NSData? = service.fetchData(code, mediaType: MediaType.TEXT)!
 
         if response != nil {
-            var result: [NSString] = response?.parseXML("/secuotp/@check") as [NSString]
+            var result: [NSString] = response?.parseXML("/secuotp/@check")as! [NSString]
 
             if result[0].intValue == 1 {
-                result = response?.parseXML("/secuotp/*") as [NSString]
+                result = response?.parseXML("/secuotp/*")as! [NSString]
                 let config: SiteEntity = SiteEntity()
                 config.siteName = result[0]
                 config.siteDomain = result[1]
@@ -56,7 +56,8 @@ class DatabaseService {
                 config.userRemoval = result[5]
                 config.otpLength = result[6]
                 config.otpPattern = result[7]
-                
+                config.siteImage = result[8]
+                println("Data: \n\(response?.bytes)")
                 return config.save()
             }
         }

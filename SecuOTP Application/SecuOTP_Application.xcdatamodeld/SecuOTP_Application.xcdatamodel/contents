@@ -8,6 +8,7 @@
         <attribute name="otp_pattern" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="site_description" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="site_domain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="site_image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="site_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="site_serial" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user_removal" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,6 +16,6 @@
     </entity>
     <elements>
         <element name="Config" positionX="-63" positionY="-18" width="128" height="58"/>
-        <element name="Site" positionX="216" positionY="-9" width="128" height="163"/>
+        <element name="Site" positionX="216" positionY="-9" width="128" height="180"/>
     </elements>
 </model>

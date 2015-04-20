@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
-class SettingViewController: UITableViewController {
+class SettingViewController: UITableViewController, UITableViewDelegate {
+    
+    @IBOutlet weak var changePinCell: UITableViewCell!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +30,32 @@ class SettingViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 1 {
+            let controller: UIAlertController = UIAlertController(title: "Change PIN", message: "Old PIN", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let action1: UIAlertAction = UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) -> Void in
+                let textField: UITextField = controller.textFields![0] as! UITextField
+                let config: ConfigEntity = ConfigEntity()
+                
+                var data: NSMutableArray = config.getValueFromKey("password")
+                if textField.text == data[0] as? NSString {
+                    println("Good")
+                }
+                
+            })
+            
+            controller.addTextFieldWithConfigurationHandler({ (textField: UITextField!) -> Void in
+                textField.secureTextEntry = true
+                textField.placeholder = "Old PIN Code"
+                textField.keyboardType = UIKeyboardType.PhonePad
+            })
+            
+            controller.addAction(action1)
+            
+            self.presentViewController(controller, animated: true, completion: nil)
+        }
+    }
     /*    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 

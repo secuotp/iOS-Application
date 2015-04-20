@@ -34,10 +34,10 @@ extension Int {
 
 
 extension String {
-    func toByteArray() -> [Byte] {
-        var array = [Byte]()
+    func toByteArray() -> [UInt8] {
+        var array = [UInt8]()
         for char in self.utf8 {
-            array += [char as Byte]
+            array += [char as UInt8]
         }
         
         return array

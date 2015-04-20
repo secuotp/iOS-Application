@@ -13,6 +13,7 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
     @IBOutlet var tableViewManager: UITableView!
     
     var item: [NSString] = [NSString]()
+    var image: [UIImage?] = [UIImage?]()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,14 +22,15 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
         item = [NSString]()
         
         let siteList: SiteEntity = SiteEntity()
-        let data:[NSManagedObject] = siteList.fetch()
+        let data: [Site] = siteList.fetch()
         
-        for i: NSManagedObject in data {
-            var siteName: AnyObject? = i .valueForKey("site_name")
-            if siteName != nil {
-                item.append(i.valueForKey("site_name") as NSString)
+        for i: Site in data{
+            if i.siteName != nil{
+                item.append(i.siteName!)
+                image.append(i.siteImage)
             }
         }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,10 +47,14 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
         if tableViewCell == nil {
             tableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         }
-        var label: UILabel = tableViewCell?.viewWithTag(1) as UILabel
-        label.text = item[indexPath.row]
+        var label: UILabel = tableViewCell?.viewWithTag(1) as! UILabel
+        var wallpaper: UIImageView = tableViewCell?.viewWithTag(2) as! UIImageView
+        label.text = item[indexPath.row] as String
+        if image[indexPath.row] != nil {
+            wallpaper.image = image[indexPath.row]
+        }
         
-        return tableViewCell as UITableViewCell
+        return tableViewCell as! UITableViewCell
         
     }
     
@@ -58,7 +64,7 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "AppManagerToOTP" {
-            let viewController: OTPViewController = segue.destinationViewController as OTPViewController
+            let viewController: OTPViewController = segue.destinationViewController as! OTPViewController
             let indexPath: NSIndexPath = self.tableView.indexPathForSelectedRow()!
             viewController.appName = item[indexPath.row]
             

@@ -53,7 +53,7 @@ class CreatePasswordViewController: UIViewController {
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CreatePasswordToConfirmPassword" {
-            let confirmViewController: ConfirmPasswordViewController = segue.destinationViewController as ConfirmPasswordViewController
+            let confirmViewController: ConfirmPasswordViewController = segue.destinationViewController as! ConfirmPasswordViewController
             confirmViewController.password = pin
             
             pin = nil
@@ -68,27 +68,27 @@ class CreatePasswordViewController: UIViewController {
     
     // When Edit Changed
     @IBAction func whenKeyboardTap(sender: AnyObject) {
-        if countElements(textField.text) == 0 {
+        if count(textField.text) == 0 {
             dot1.textColor = greyColor
             dot2.textColor = greyColor
             dot3.textColor = greyColor
             dot4.textColor = greyColor
-        } else if countElements(textField.text) == 1 {
+        } else if count(textField.text) == 1 {
             dot1.textColor = orangeColor
             dot2.textColor = greyColor
             dot3.textColor = greyColor
             dot4.textColor = greyColor
-        } else if countElements(textField.text) == 2 {
+        } else if count(textField.text) == 2 {
             dot1.textColor = orangeColor
             dot2.textColor = orangeColor
             dot3.textColor = greyColor
             dot4.textColor = greyColor
-        } else if countElements(textField.text) == 3 {
+        } else if count(textField.text) == 3 {
             dot1.textColor = orangeColor
             dot2.textColor = orangeColor
             dot3.textColor = orangeColor
             dot4.textColor = greyColor
-        } else if countElements(textField.text) == 4 {
+        } else if count(textField.text) == 4 {
             dot1.textColor = orangeColor
             dot2.textColor = orangeColor
             dot3.textColor = orangeColor

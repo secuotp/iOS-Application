@@ -51,7 +51,7 @@ class AddApplicationViewController: UITableViewController, UISearchBarDelegate, 
         } else {
             label = cell?.viewWithTag(1) as? UILabel
         }
-        label?.text = list[indexPath.row]
+        label?.text = list[indexPath.row] as String
         
         return cell!
     }
@@ -61,9 +61,9 @@ class AddApplicationViewController: UITableViewController, UISearchBarDelegate, 
         if cell != nil {
             appInfo = DatabaseService.getAppInfo(list[indexPath.row])
         }
-        var controller: UIAlertController = UIAlertController(title: appInfo?.name, message: "Please enter your Magration Code", preferredStyle: UIAlertControllerStyle.Alert)
+        var controller: UIAlertController = UIAlertController(title: appInfo?.name as? String, message: "Please enter your Magration Code", preferredStyle: UIAlertControllerStyle.Alert)
         var action: UIAlertAction = UIAlertAction(title: "Submit", style: .Default, handler: { (alertAction: UIAlertAction!) -> Void in
-            let codeField: UITextField = controller.textFields![0] as UITextField
+            let codeField: UITextField = controller.textFields![0] as! UITextField
             let code = codeField.text
             
             if DatabaseService.approveMigrateService(code) {
@@ -101,7 +101,7 @@ class AddApplicationViewController: UITableViewController, UISearchBarDelegate, 
     
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
         list = [NSString]()
-        if countElements(searchString) > 0 {
+        if count(searchString) > 0 {
             self.filterContentForSearchText(searchString)
         }
         return true
