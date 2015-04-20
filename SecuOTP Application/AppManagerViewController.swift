@@ -30,8 +30,9 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
                 image.append(i.siteImage)
             }
         }
-        
+        self.tableView.reloadData()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

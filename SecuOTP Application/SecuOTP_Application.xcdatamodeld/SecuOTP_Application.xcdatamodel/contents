@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Config" representedClassName="Config" syncable="YES">
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -8,7 +8,7 @@
         <attribute name="otp_pattern" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="site_description" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="site_domain" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="site_image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="site_image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="site_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="site_serial" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user_removal" optional="YES" attributeType="String" syncable="YES"/>

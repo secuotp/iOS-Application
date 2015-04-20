@@ -37,7 +37,7 @@ class SiteEntity: NSObject {
     var userRemoval: NSString?
     var otpLength: NSString?
     var otpPattern: NSString?
-    var siteImage: NSString?
+    var siteImage: NSData?
     
     override init(){
         context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
@@ -89,9 +89,9 @@ class SiteEntity: NSObject {
                 site.siteSerial = i.valueForKey(SiteEntityKey.SITE_SERIAL.rawValue) as! NSString?
                 site.siteDescription = i.valueForKey(SiteEntityKey.SITE_DESC.rawValue) as! NSString?
                 
-                var imgString: NSString? = (i.valueForKey(SiteEntityKey.SITE_IMAGE.rawValue) as! NSString?)
+                var imgString: NSData? = (i.valueForKey(SiteEntityKey.SITE_IMAGE.rawValue) as! NSData?)
                 if imgString != nil {
-                    site.siteImage = UIImage(data: imgString!.dataUsingEncoding(NSUTF8StringEncoding)!)
+                    site.siteImage = UIImage(data: imgString!)
                 }
                 site.userSerial = i.valueForKey(SiteEntityKey.USER_SERIAL.rawValue) as! NSString?
                 site.userRemoval = i.valueForKey(SiteEntityKey.USER_REMOVAL.rawValue) as! NSString?

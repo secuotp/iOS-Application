@@ -67,7 +67,7 @@ class AddApplicationViewController: UITableViewController, UISearchBarDelegate, 
             let code = codeField.text
             
             if DatabaseService.approveMigrateService(code) {
-                let alert: UIAlertView = UIAlertView(title: "Add Application Success", message: "Congratulation you successfully migrate \(self.appInfo?.name!) into your application", delegate: nil, cancelButtonTitle: "OK")
+                let alert: UIAlertView = UIAlertView(title: "Add Application Success", message: "Congratulation you successfully migrate \(self.appInfo?.name! as! String) into your application", delegate: nil, cancelButtonTitle: "OK")
                 alert.show()
                 
                 self.navigationController?.popViewControllerAnimated(true)

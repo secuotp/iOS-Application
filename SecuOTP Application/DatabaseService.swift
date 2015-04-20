@@ -56,7 +56,10 @@ class DatabaseService {
                 config.userRemoval = result[5]
                 config.otpLength = result[6]
                 config.otpPattern = result[7]
-                config.siteImage = result[8]
+                
+                let imgHttpPath: NSURL = NSURL(string: result[8] as String)!
+                config.siteImage = NSData(contentsOfURL: imgHttpPath)
+                
                 println("Data: \n\(response?.bytes)")
                 return config.save()
             }
