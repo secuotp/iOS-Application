@@ -43,6 +43,17 @@ extension String {
         return array
     }
     
+    func str2num() -> UInt32 {
+        var charArray = Array(self)
+        var result: UInt32 = 0
+        for i: Character in charArray {
+            for j in String(i).unicodeScalars {
+                result += j.value
+            }
+        }
+        return result
+    }
+    
 }
 
 extension NSDate {

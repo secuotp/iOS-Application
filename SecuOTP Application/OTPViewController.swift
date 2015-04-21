@@ -13,12 +13,18 @@ class OTPViewController: UIViewController {
     @IBOutlet weak var otpCode: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
 
-    var appName: NSString?
+    var site: Site?
+    var privateKey: String?
+    var key: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = appName! as String
+        self.navigationItem.title = site?.siteName as? String
+        var privateNum = "\(site?.userSerial as! String) \(site?.siteSerial as! String) SecuOTP".str2num()
+        self.privateKey = "\(privateNum)"
+        var message = "SecuOTP"
+        self.key = "\(site?.userSerial as! String)-\(site?.siteSerial as! String)-\(message.hmacSHA1(privateKey!)))"
         
         let topOtpViewConstraint: NSLayoutConstraint = NSLayoutConstraint(item: otpView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: self.view.bounds.height * 0.25)
         
@@ -36,10 +42,10 @@ class OTPViewController: UIViewController {
         println("Time: \(format.stringFromDate(newTime))")
         var tmp = Int(newTime.timeIntervalSince1970) * 1000
 
-        var key: String = "\(Int(tmp))"
-        var data: String = appName! as String
+        var timeKey: String = "\(Int(tmp))"
+        var data: String = self.key!
         
-        var otp: NSString = data.totp(key, digits: 8)
+        var otp: NSString = data.totp(timeKey, digits: 8)
         
         otpCode.text = otp as String
         // Do any additional setup after loading the view.
@@ -63,10 +69,10 @@ class OTPViewController: UIViewController {
             println("Time: \(format.stringFromDate(time))")
             var tmp = Int(time.timeIntervalSince1970) * 1000
             
-            var key: String = "\(Int(tmp))"
-            var data: String = appName! as String
+            var timeKey: String = "\(Int(tmp))"
+            var data: String = self.key!
             
-            var otp: NSString = data.totp(key, digits: 8)
+            var otp: NSString = data.totp(timeKey, digits: 8)
             
             otpCode.text = otp as String
 

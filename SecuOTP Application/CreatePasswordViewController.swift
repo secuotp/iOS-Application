@@ -20,7 +20,7 @@ class CreatePasswordViewController: UIViewController {
     @IBOutlet weak var textBanner: UILabel!
     
     // Parameter
-    var pin : NSString?
+    var pin : NSString = ""
     var orangeColor: UIColor = UIColor(red: CGFloat(238.0/255), green: CGFloat(175.0/255), blue: CGFloat(72.0/255), alpha: 1)
     var greyColor: UIColor = UIColor(red: CGFloat(216.0/255), green: CGFloat(216.0/255), blue: CGFloat(216.0/255), alpha: 1)
     
@@ -51,23 +51,8 @@ class CreatePasswordViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "CreatePasswordToConfirmPassword" {
-            let confirmViewController: ConfirmPasswordViewController = segue.destinationViewController as! ConfirmPasswordViewController
-            confirmViewController.password = pin
-            
-            pin = nil
-            textField.text = ""
-            
-            dot1.textColor = greyColor
-            dot2.textColor = greyColor
-            dot3.textColor = greyColor
-            dot4.textColor = greyColor
-        }
-    }
     
-    // When Edit Changed
-    @IBAction func whenKeyboardTap(sender: AnyObject) {
+    func passwordUpdate() -> Int {
         if count(textField.text) == 0 {
             dot1.textColor = greyColor
             dot2.textColor = greyColor
@@ -93,34 +78,43 @@ class CreatePasswordViewController: UIViewController {
             dot2.textColor = orangeColor
             dot3.textColor = orangeColor
             dot4.textColor = orangeColor
+        }
+        
+        return count(textField.text)
+    }
+    
+    // When Edit Changed
+    @IBAction func whenKeyboardTap(sender: AnyObject) {
+        if passwordUpdate() == 4 {
+            let animation: CATransition = CATransition()
+            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            animation.type = kCATransitionFade
+            animation.duration = 0.75
             
-            textField.resignFirstResponder()
+            textBanner.layer.addAnimation(animation, forKey: "kCATransitionFade")
             
-            let alert : UIAlertController = UIAlertController(title: "Create PIN", message: "Are you sure you use this PIN", preferredStyle: UIAlertControllerStyle.Alert)
-            let yes : UIAlertAction = UIAlertAction(
-                title: "Yes",
-                style: UIAlertActionStyle.Default,
-                handler: { action in
-                    self.pin = self.textField.text!
-                    self.performSegueWithIdentifier("CreatePasswordToConfirmPassword", sender: self)
+            textBanner.text = "Re-Enter PIN Number"
+            
+            if self.pin.length == 0 {
+                self.pin = textField.text
+                textField.text = ""
+            } else {
+                if self.pin == textField.text {
+                    var config: ConfigEntity = ConfigEntity()
+                    config.password = self.pin
+                    config.save()
+                    
+                    self.performSegueWithIdentifier("CreatePasswordToManageApp", sender: self)
+                } else {
+                    textBanner.text = "Enter PIN Number"
+                    textField.text = ""
+                    self.pin = ""
+                    
+                    let alert: UIAlertView = UIAlertView(title: "Create PIN Number Failed", message: "Your PIN Number Mismatch", delegate: nil, cancelButtonTitle: "OK")
+                    alert.show()
                 }
-            )
-            let no : UIAlertAction = UIAlertAction(
-                title: "No",
-                style: UIAlertActionStyle.Cancel,
-                handler: { action in
-                    self.textField.text = ""
-                    self.dot1.textColor = self.greyColor
-                    self.dot2.textColor = self.greyColor
-                    self.dot3.textColor = self.greyColor
-                    self.dot4.textColor = self.greyColor
-                }
-            )
-            
-            alert.addAction(yes)
-            alert.addAction(no)
-            
-            self.presentViewController(alert, animated: true, completion: nil)
+            }
+            self.passwordUpdate()
         }
     }
 }

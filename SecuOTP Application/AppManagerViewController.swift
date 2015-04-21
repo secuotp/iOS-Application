@@ -12,22 +12,21 @@ import CoreData
 class AppManagerViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableViewManager: UITableView!
     
-    var item: [NSString] = [NSString]()
-    var image: [UIImage?] = [UIImage?]()
+    var site: [Site] = [Site]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(animated: Bool) {
-        item = [NSString]()
+        site = [Site]()
         
         let siteList: SiteEntity = SiteEntity()
         let data: [Site] = siteList.fetch()
         
         for i: Site in data{
             if i.siteName != nil{
-                item.append(i.siteName!)
-                image.append(i.siteImage)
+                site.append(i)
             }
         }
         self.tableView.reloadData()
@@ -39,7 +38,7 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.item.count
+        return self.site.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -50,9 +49,9 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
         }
         var label: UILabel = tableViewCell?.viewWithTag(1) as! UILabel
         var wallpaper: UIImageView = tableViewCell?.viewWithTag(2) as! UIImageView
-        label.text = item[indexPath.row] as String
-        if image[indexPath.row] != nil {
-            wallpaper.image = image[indexPath.row]
+        label.text = site[indexPath.row].siteName! as String
+        if site[indexPath.row].siteImage != nil {
+            wallpaper.image = site[indexPath.row].siteImage
         }
         
         return tableViewCell as! UITableViewCell
@@ -67,7 +66,7 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
         if segue.identifier == "AppManagerToOTP" {
             let viewController: OTPViewController = segue.destinationViewController as! OTPViewController
             let indexPath: NSIndexPath = self.tableView.indexPathForSelectedRow()!
-            viewController.appName = item[indexPath.row]
+            viewController.site = site[indexPath.row]
             
         }
     }
