@@ -15,8 +15,6 @@ class SettingViewController: UITableViewController, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.title = "Setting"
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
