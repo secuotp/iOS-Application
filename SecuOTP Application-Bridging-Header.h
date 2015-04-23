@@ -4,3 +4,4 @@
 
 #import <CommonCrypto/CommonHMAC.h>
 #import "TouchXML.h"
+#import "SWTableViewCell.h"

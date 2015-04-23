@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AppManagerViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class AppManagerViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, SWTableViewCellDelegate {
     @IBOutlet var tableViewManager: UITableView!
     
     var site: [Site] = [Site]()
@@ -42,11 +42,20 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var tableViewCell: AnyObject? = self.tableView.dequeueReusableCellWithIdentifier("Cell")
+        var tableViewCell: CustomManagerTableCell? = self.tableView.dequeueReusableCellWithIdentifier("Cell") as? CustomManagerTableCell
         
         if tableViewCell == nil {
-            tableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+            tableViewCell = CustomManagerTableCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         }
+        
+        //Add Utility Button
+        var rightUtilityButtons: NSMutableArray = NSMutableArray()
+        let utilityButtonColor: UIColor = UIColor(red: 192.0/255, green: 57.0/255, blue: 43.0/255, alpha: 1)
+        rightUtilityButtons.sw_addUtilityButtonWithColor(utilityButtonColor, title: "Delete")
+        
+        tableViewCell?.rightUtilityButtons = rightUtilityButtons as [AnyObject]
+        tableViewCell?.delegate = self
+        
         var label: UILabel = tableViewCell?.viewWithTag(1) as! UILabel
         var wallpaper: UIImageView = tableViewCell?.viewWithTag(2) as! UIImageView
         label.text = site[indexPath.row].siteName! as String
@@ -54,7 +63,7 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
             wallpaper.image = site[indexPath.row].siteImage
         }
         
-        return tableViewCell as! UITableViewCell
+        return tableViewCell! as CustomManagerTableCell
         
     }
     
@@ -68,6 +77,43 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
             let indexPath: NSIndexPath = self.tableView.indexPathForSelectedRow()!
             viewController.site = site[indexPath.row]
             
+        }
+    }
+    
+    func swipeableTableViewCell(cell: SWTableViewCell!, didTriggerRightUtilityButtonWithIndex index: Int) {
+        if index == 0 {
+            let appName: UILabel = cell.viewWithTag(1) as! UILabel
+            let alert: UIAlertController = UIAlertController(title: "Warning", message: "Are you sure you want to remove \(appName.text!).", preferredStyle: UIAlertControllerStyle.Alert)
+            let okButton: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) -> Void in
+                let pinAlert: UIAlertController = UIAlertController(title: "Verify Identity", message: "Please enter your PIN code", preferredStyle: UIAlertControllerStyle.Alert)
+                let submitButton: UIAlertAction = UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) -> Void in
+                    let config: ConfigEntity = ConfigEntity()
+                    let object: NSMutableArray = config.getValueFromKey("Password")
+                    let pinField: UITextField = pinAlert.textFields![0] as! UITextField
+                    
+                    if pinField.text! == object[0] as! String {
+                        let alert: UIAlertView = UIAlertView(title: "Good", message: "Good", delegate: nil, cancelButtonTitle: "OK")
+                        alert.show()
+                    } else {
+                        let alert: UIAlertView = UIAlertView(title: "Can't remove Application", message: "Incorrect PIN number", delegate: nil, cancelButtonTitle: "OK")
+                        alert.show()
+                    }
+                })
+                
+                pinAlert.addTextFieldWithConfigurationHandler({(textField: UITextField!) -> Void in
+                    textField.placeholder = "PIN Code"
+                    textField.secureTextEntry = true
+                    textField.keyboardType = UIKeyboardType.NumberPad
+                })
+                
+                pinAlert.addAction(submitButton)
+                
+                self.presentViewController(pinAlert, animated: true, completion: nil)
+            })
+            alert.addAction(okButton)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
 }

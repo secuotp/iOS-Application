@@ -28,6 +28,13 @@
 		472F85EA1AC1AD2400021FD6 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 472F85DB1AC1AD2400021FD6 /* CXMLNode_XPathExtensions.m */; };
 		472F85EB1AC1AD2400021FD6 /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 472F85DD1AC1AD2400021FD6 /* CXMLNode.m */; };
 		472F85EC1AC1AD2400021FD6 /* Tidy in Resources */ = {isa = PBXBuildFile; fileRef = 472F85DE1AC1AD2400021FD6 /* Tidy */; };
+		473ACB691AE9028E006B93E4 /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 473ACB5E1AE9028E006B93E4 /* NSMutableArray+SWUtilityButtons.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		473ACB6A1AE9028E006B93E4 /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 473ACB601AE9028E006B93E4 /* SWCellScrollView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		473ACB6B1AE9028E006B93E4 /* SWLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 473ACB621AE9028E006B93E4 /* SWLongPressGestureRecognizer.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		473ACB6C1AE9028E006B93E4 /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 473ACB641AE9028E006B93E4 /* SWTableViewCell.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		473ACB6D1AE9028E006B93E4 /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 473ACB661AE9028E006B93E4 /* SWUtilityButtonTapGestureRecognizer.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		473ACB6E1AE9028E006B93E4 /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 473ACB681AE9028E006B93E4 /* SWUtilityButtonView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		473ACB701AE90A92006B93E4 /* CustomManagerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ACB6F1AE90A92006B93E4 /* CustomManagerTableCell.swift */; };
 		478DE9891AC1E2DC00B01623 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478DE9881AC1E2DC00B01623 /* XMLParser.swift */; };
 		47C4C7EF1AC9525B00FC95C2 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C4C7EE1AC9525B00FC95C2 /* Site.swift */; };
 		47CA2E161A9DE88A00AA17E3 /* ConfigEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E151A9DE88A00AA17E3 /* ConfigEntity.swift */; };
@@ -92,6 +99,19 @@
 		472F85DD1AC1AD2400021FD6 /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CXMLNode.m; path = TouchXML/CXMLNode.m; sourceTree = "<group>"; };
 		472F85DE1AC1AD2400021FD6 /* Tidy */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Tidy; path = TouchXML/Tidy; sourceTree = "<group>"; };
 		472F85DF1AC1AD2400021FD6 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchXML.h; path = TouchXML/TouchXML.h; sourceTree = "<group>"; };
+		473ACB5D1AE9028E006B93E4 /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+SWUtilityButtons.h"; path = "SWTableCell/NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
+		473ACB5E1AE9028E006B93E4 /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+SWUtilityButtons.m"; path = "SWTableCell/NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
+		473ACB5F1AE9028E006B93E4 /* SWCellScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWCellScrollView.h; path = SWTableCell/SWCellScrollView.h; sourceTree = "<group>"; };
+		473ACB601AE9028E006B93E4 /* SWCellScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWCellScrollView.m; path = SWTableCell/SWCellScrollView.m; sourceTree = "<group>"; };
+		473ACB611AE9028E006B93E4 /* SWLongPressGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWLongPressGestureRecognizer.h; path = SWTableCell/SWLongPressGestureRecognizer.h; sourceTree = "<group>"; };
+		473ACB621AE9028E006B93E4 /* SWLongPressGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWLongPressGestureRecognizer.m; path = SWTableCell/SWLongPressGestureRecognizer.m; sourceTree = "<group>"; };
+		473ACB631AE9028E006B93E4 /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWTableViewCell.h; path = SWTableCell/SWTableViewCell.h; sourceTree = "<group>"; };
+		473ACB641AE9028E006B93E4 /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWTableViewCell.m; path = SWTableCell/SWTableViewCell.m; sourceTree = "<group>"; };
+		473ACB651AE9028E006B93E4 /* SWUtilityButtonTapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWUtilityButtonTapGestureRecognizer.h; path = SWTableCell/SWUtilityButtonTapGestureRecognizer.h; sourceTree = "<group>"; };
+		473ACB661AE9028E006B93E4 /* SWUtilityButtonTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWUtilityButtonTapGestureRecognizer.m; path = SWTableCell/SWUtilityButtonTapGestureRecognizer.m; sourceTree = "<group>"; };
+		473ACB671AE9028E006B93E4 /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWUtilityButtonView.h; path = SWTableCell/SWUtilityButtonView.h; sourceTree = "<group>"; };
+		473ACB681AE9028E006B93E4 /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWUtilityButtonView.m; path = SWTableCell/SWUtilityButtonView.m; sourceTree = "<group>"; };
+		473ACB6F1AE90A92006B93E4 /* CustomManagerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomManagerTableCell.swift; sourceTree = "<group>"; };
 		478DE9881AC1E2DC00B01623 /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		47C1F3061AA09CE400A21966 /* SecuOTP Application-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SecuOTP Application-Bridging-Header.h"; sourceTree = "<group>"; };
 		47C4C7EE1AC9525B00FC95C2 /* Site.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
@@ -193,6 +213,25 @@
 			name = TouchXML;
 			sourceTree = "<group>";
 		};
+		473ACB5C1AE90256006B93E4 /* SWTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				473ACB5D1AE9028E006B93E4 /* NSMutableArray+SWUtilityButtons.h */,
+				473ACB5E1AE9028E006B93E4 /* NSMutableArray+SWUtilityButtons.m */,
+				473ACB5F1AE9028E006B93E4 /* SWCellScrollView.h */,
+				473ACB601AE9028E006B93E4 /* SWCellScrollView.m */,
+				473ACB611AE9028E006B93E4 /* SWLongPressGestureRecognizer.h */,
+				473ACB621AE9028E006B93E4 /* SWLongPressGestureRecognizer.m */,
+				473ACB631AE9028E006B93E4 /* SWTableViewCell.h */,
+				473ACB641AE9028E006B93E4 /* SWTableViewCell.m */,
+				473ACB651AE9028E006B93E4 /* SWUtilityButtonTapGestureRecognizer.h */,
+				473ACB661AE9028E006B93E4 /* SWUtilityButtonTapGestureRecognizer.m */,
+				473ACB671AE9028E006B93E4 /* SWUtilityButtonView.h */,
+				473ACB681AE9028E006B93E4 /* SWUtilityButtonView.m */,
+			);
+			name = SWTableCell;
+			sourceTree = "<group>";
+		};
 		478DE9871AC1E2C200B01623 /* XML Parser */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +244,7 @@
 		47CA2E1A1A9DE8D000AA17E3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				473ACB5C1AE90256006B93E4 /* SWTableCell */,
 				478DE9871AC1E2C200B01623 /* XML Parser */,
 				472C47891AB866980010EAA2 /* xmlparser */,
 				4705F2BD1AAB6627004486FD /* crypto */,
@@ -212,6 +252,7 @@
 				470B4B891AB76D5700CCE1BD /* webservice */,
 				47CE28561AC1A45E00BC93DD /* AppInfo.swift */,
 				47C4C7EE1AC9525B00FC95C2 /* Site.swift */,
+				473ACB6F1AE90A92006B93E4 /* CustomManagerTableCell.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -423,11 +464,15 @@
 				47CA2E281A9DFA9D00AA17E3 /* LoginViewController.swift in Sources */,
 				4714F3C51A9F4EA9005FB8F5 /* SettingViewController.swift in Sources */,
 				47CA2E241A9DEBFE00AA17E3 /* ContentPageViewController.swift in Sources */,
+				473ACB6D1AE9028E006B93E4 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				472F85E01AC1AD2400021FD6 /* CXHTMLDocument.m in Sources */,
 				472F85E11AC1AD2400021FD6 /* CXMLDocument_CreationExtensions.m in Sources */,
 				478DE9891AC1E2DC00B01623 /* XMLParser.swift in Sources */,
 				47CA2E191A9DE8A500AA17E3 /* SecuOTP_Application.xcdatamodeld in Sources */,
+				473ACB691AE9028E006B93E4 /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				47E1B9DC1A9C7CC6007FCC8B /* StartViewController.swift in Sources */,
+				473ACB701AE90A92006B93E4 /* CustomManagerTableCell.swift in Sources */,
+				473ACB6A1AE9028E006B93E4 /* SWCellScrollView.m in Sources */,
 				4705F2BF1AAB6652004486FD /* CryptoString.swift in Sources */,
 				47CE28571AC1A45E00BC93DD /* AppInfo.swift in Sources */,
 				47CA2E161A9DE88A00AA17E3 /* ConfigEntity.swift in Sources */,
@@ -438,14 +483,17 @@
 				47F2E72C1AB6D73E00140355 /* WebService.swift in Sources */,
 				4705F2C31AAB8532004486FD /* Converter.swift in Sources */,
 				472F85E51AC1AD2400021FD6 /* CXMLElement_ElementTreeExtensions.m in Sources */,
+				473ACB6B1AE9028E006B93E4 /* SWLongPressGestureRecognizer.m in Sources */,
 				47CA2E2C1A9E021600AA17E3 /* CreatePasswordViewController.swift in Sources */,
 				472F85E91AC1AD2400021FD6 /* CXMLNode_PrivateExtensions.m in Sources */,
 				472F85E41AC1AD2400021FD6 /* CXMLElement_CreationExtensions.m in Sources */,
 				471426B41A9E65C700D72128 /* ConfirmPasswordViewController.swift in Sources */,
 				472F85EA1AC1AD2400021FD6 /* CXMLNode_XPathExtensions.m in Sources */,
+				473ACB6C1AE9028E006B93E4 /* SWTableViewCell.m in Sources */,
 				472F85E81AC1AD2400021FD6 /* CXMLNode_CreationExtensions.m in Sources */,
 				472F85E21AC1AD2400021FD6 /* CXMLDocument_PrivateExtensions.m in Sources */,
 				470B024F1A9F224300AD00DB /* AppManagerViewController.swift in Sources */,
+				473ACB6E1AE9028E006B93E4 /* SWUtilityButtonView.m in Sources */,
 				47FE002F1AC809F100D83C0C /* SiteEntity.swift in Sources */,
 				47E1B9D71A9C7CC6007FCC8B /* AppDelegate.swift in Sources */,
 				47C4C7EF1AC9525B00FC95C2 /* Site.swift in Sources */,

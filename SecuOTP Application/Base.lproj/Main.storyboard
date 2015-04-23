@@ -19,7 +19,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0F-o1-bRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-318" y="442"/>
+            <point key="canvasLocation" x="-310" y="532"/>
         </scene>
         <!--Content Page View Controller-->
         <scene sceneID="Ogz-fK-uwm">
@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJC-49-XYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="442"/>
+            <point key="canvasLocation" x="138" y="532"/>
         </scene>
         <!--Create Password View Controller-->
         <scene sceneID="v05-7x-Azo">
@@ -193,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kds-SH-qny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="589" y="442"/>
+            <point key="canvasLocation" x="597" y="532"/>
         </scene>
         <!--Search-->
         <scene sceneID="8oP-Z4-UTG">
@@ -262,7 +262,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="Ss6-Dw-07h">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="Ss6-Dw-07h" customClass="CustomManagerTableCell" customModule="SecuOTP_Application" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ss6-Dw-07h" id="5Ut-lf-FCd">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -402,7 +402,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wallpaper 2" translatesAutoresizingMaskIntoConstraints="NO" id="lTu-SA-pXP">
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Wallpaper 2" translatesAutoresizingMaskIntoConstraints="NO" id="lTu-SA-pXP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87R-bb-LMu">
@@ -615,7 +615,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-758" y="442"/>
+            <point key="canvasLocation" x="-750" y="532"/>
         </scene>
         <!--Application-->
         <scene sceneID="fuf-0Q-b8g">
