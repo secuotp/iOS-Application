@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 protocol Entity {
-    func save()
+    func save() -> Bool
     func fetch() -> [NSManagedObject]
-    func recordCount() -> Int
+    func recordCount() -> NSInteger
 }

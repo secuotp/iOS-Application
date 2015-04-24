@@ -36,7 +36,7 @@ class SettingViewController: UITableViewController, UITableViewDelegate {
                 let textField: UITextField = controller.textFields![0] as! UITextField
                 let config: ConfigEntity = ConfigEntity()
                 
-                var data: NSMutableArray = config.getValueFromKey("password")
+                var data: NSMutableArray = config.getValueFromKey(.PASSWORD)
                 if textField.text == data[0] as? NSString {
                     println("Good")
                 }

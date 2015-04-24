@@ -22,10 +22,10 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
         site = [Site]()
         
         let siteList: SiteEntity = SiteEntity()
-        let data: [Site] = siteList.fetch()
+        let data: [Site] = siteList.getValues()
         
         for i: Site in data{
-            if i.siteName != nil{
+            if i.siteName != nil {
                 site.append(i)
             }
         }
@@ -88,12 +88,21 @@ class AppManagerViewController: UITableViewController, UITableViewDataSource, UI
                 let pinAlert: UIAlertController = UIAlertController(title: "Verify Identity", message: "Please enter your PIN code", preferredStyle: UIAlertControllerStyle.Alert)
                 let submitButton: UIAlertAction = UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) -> Void in
                     let config: ConfigEntity = ConfigEntity()
-                    let object: NSMutableArray = config.getValueFromKey("Password")
+                    let object: NSMutableArray = config.getValueFromKey(.PASSWORD)
                     let pinField: UITextField = pinAlert.textFields![0] as! UITextField
                     
                     if pinField.text! == object[0] as! String {
-                        let alert: UIAlertView = UIAlertView(title: "Good", message: "Good", delegate: nil, cancelButtonTitle: "OK")
-                        alert.show()
+                        let siteEntity: SiteEntity = SiteEntity()
+                        if !siteEntity.delete(SiteEntityKey.SITE_NAME, data: appName.text!) {
+                            let alert: UIAlertView = UIAlertView(title: "Can't remove Application", message: "Remove Failed", delegate: nil, cancelButtonTitle: "OK")
+                            alert.show()
+                        } else {
+                            let indexPath: NSIndexPath = self.tableView.indexPathForCell(cell)!
+                            self.site.removeAtIndex(indexPath.row)
+                            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+                            
+                            
+                        }
                     } else {
                         let alert: UIAlertView = UIAlertView(title: "Can't remove Application", message: "Incorrect PIN number", delegate: nil, cancelButtonTitle: "OK")
                         alert.show()

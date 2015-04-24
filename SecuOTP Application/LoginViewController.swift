@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
             textField.resignFirstResponder()
             
             let config: ConfigEntity = ConfigEntity()
-            let data: NSMutableArray = config.getValueFromKey("password")
+            let data: NSMutableArray = config.getValueFromKey(.PASSWORD)
             
             println("Data: \(data[0] as! NSString)")
             if (data[0] as! NSString) == textField.text {

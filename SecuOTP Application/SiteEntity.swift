@@ -21,7 +21,7 @@ enum SiteEntityKey: String {
     case SITE_IMAGE = "site_image"
 }
 
-class SiteEntity: NSObject {
+class SiteEntity: NSObject, Entity {
     // PRIVATE PARAM
     private let context : NSManagedObjectContext
     private let entity : NSEntityDescription
@@ -75,38 +75,54 @@ class SiteEntity: NSObject {
     }
     
     // Fetch all Records in SqlLite (Config Entity)
-    func fetch() -> [Site] {
+    func fetch() -> [NSManagedObject] {
         let fetchRequest : NSFetchRequest = NSFetchRequest(entityName: entityName as String)
         var error : NSError?
-        let fetchResults : NSArray? = context.executeFetchRequest(fetchRequest, error: &error) as! [NSManagedObject]!
+        let fetchResults : [NSManagedObject] = context.executeFetchRequest(fetchRequest, error: &error) as! [NSManagedObject]!
+        
+        return fetchResults
+    }
+    
+    func getValues() -> [Site] {
+        let fetchResults: [NSManagedObject] = self.fetch()
         
         var resultObject: [Site] = [Site]()
-        if fetchResults != nil{
-            for i: NSManagedObject in (fetchResults as! [NSManagedObject]) {
-                var site = Site()
-                site.siteName = i.valueForKey(SiteEntityKey.SITE_NAME.rawValue) as! NSString?
-                site.siteDomain = i.valueForKey(SiteEntityKey.SITE_DOMAIN.rawValue) as! NSString?
-                site.siteSerial = i.valueForKey(SiteEntityKey.SITE_SERIAL.rawValue) as! NSString?
-                site.siteDescription = i.valueForKey(SiteEntityKey.SITE_DESC.rawValue) as! NSString?
-                
-                var imgString: NSData? = (i.valueForKey(SiteEntityKey.SITE_IMAGE.rawValue) as! NSData?)
-                if imgString != nil {
-                    site.siteImage = UIImage(data: imgString!)
-                }
-                site.userSerial = i.valueForKey(SiteEntityKey.USER_SERIAL.rawValue) as! NSString?
-                site.userRemoval = i.valueForKey(SiteEntityKey.USER_REMOVAL.rawValue) as! NSString?
-                
-                var length: NSString? = i.valueForKey(SiteEntityKey.OTP_LENGTH.rawValue) as! NSString?
-                if length != nil {
-                    site.otpLength = Int(length!.intValue)
-                }
-                site.otpPattern = i.valueForKey(SiteEntityKey.OTP_PATTERN.rawValue) as! NSString?
-                
-                resultObject.append(site)
+        for i: NSManagedObject in fetchResults {
+            var site = Site()
+            site.siteName = i.valueForKey(SiteEntityKey.SITE_NAME.rawValue) as! NSString?
+            site.siteDomain = i.valueForKey(SiteEntityKey.SITE_DOMAIN.rawValue) as! NSString?
+            site.siteSerial = i.valueForKey(SiteEntityKey.SITE_SERIAL.rawValue) as! NSString?
+            site.siteDescription = i.valueForKey(SiteEntityKey.SITE_DESC.rawValue) as! NSString?
+            
+            var imgString: NSData? = (i.valueForKey(SiteEntityKey.SITE_IMAGE.rawValue) as! NSData?)
+            if imgString != nil {
+                site.siteImage = UIImage(data: imgString!)
             }
-            return resultObject
-        } else {
-            return [Site]()
+            site.userSerial = i.valueForKey(SiteEntityKey.USER_SERIAL.rawValue) as! NSString?
+            site.userRemoval = i.valueForKey(SiteEntityKey.USER_REMOVAL.rawValue) as! NSString?
+            
+            var length: NSString? = i.valueForKey(SiteEntityKey.OTP_LENGTH.rawValue) as! NSString?
+            if length != nil {
+                site.otpLength = Int(length!.intValue)
+            }
+            site.otpPattern = i.valueForKey(SiteEntityKey.OTP_PATTERN.rawValue) as! NSString?
+            
+            resultObject.append(site)
         }
+        return resultObject
+    }
+    
+    func delete(key: SiteEntityKey, data: NSString) -> Bool {
+        let objects: NSArray = self.fetch()
+        for var i = 0; i < objects.count; i++ {
+            if objects[i].valueForKey(key.rawValue) as! NSString? == data {
+                context.deleteObject(objects[i] as! NSManagedObject)
+                var error: NSError?
+                context.save(&error)
+                
+                return error == nil
+            }
+        }
+        return false
     }
 }

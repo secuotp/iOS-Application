@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+enum ConfigEntityKey: NSString {
+    case PASSWORD = "Password"
+}
+
 class ConfigEntity: NSObject, Entity {
     // PRIVATE PARAM
     private let context : NSManagedObjectContext
@@ -26,11 +30,12 @@ class ConfigEntity: NSObject, Entity {
         object = NSManagedObject(entity: entity, insertIntoManagedObjectContext: context)
     }
     
-    func save() {
+    func save() -> Bool {
         object.setValue(password, forKey: "password")
         
         var error : NSError?
         context.save(&error)
+        return error == nil
     }
     
     // Start at 1 row
@@ -48,18 +53,28 @@ class ConfigEntity: NSObject, Entity {
         return fetchResults
     }
     
-    func getValueFromKey(key: NSString) -> NSMutableArray {
+    func getValueFromKey(key: ConfigEntityKey) -> NSMutableArray {
         let dataArray: [NSManagedObject] = self.fetch()
         
         let data: NSMutableArray = NSMutableArray(capacity: dataArray.count)
         
         for var i = 0; i < dataArray.count; i++ {
             
-            if dataArray[i].valueForKey(key as String) != nil {
-                data.addObject(dataArray[i].valueForKey(key as String) as! NSString)
+            if dataArray[i].valueForKey(key.rawValue as String) != nil {
+                data.addObject(dataArray[i].valueForKey(key.rawValue as String) as! NSString)
             }
         }
         return data
     }
     
+    func delete(key: ConfigEntityKey, data: NSString) -> Bool {
+        let objects: [NSManagedObject] = self.fetch()
+        for var i = 0; i < objects.count; i++ {
+            if objects[i].valueForKey(key.rawValue as String) as! NSString == data {
+                context.deleteObject(objects[i])
+                return true
+            }
+        }
+        return false
+    }
 }
