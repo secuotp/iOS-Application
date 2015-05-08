@@ -38,6 +38,22 @@ class DatabaseService {
         return nil
     }
     
+    class func timeSync() -> Int {
+        let service: WebService = WebService(url: ServiceURL.TIME_SYNC)
+        let response: NSData? = service.fetchData()
+        if response != nil {
+            let result: [NSString] = response?.parseXML("/secuotp/time") as! [NSString]
+            var ntpTime: Int = result[0].integerValue
+            var ntpDate: NSDate = NSDate(timeIntervalSince1970: (Double(ntpTime / 1000)))
+            var machineDate: NSDate = NSDate()
+            var diff: Int = (ntpTime - Int(machineDate.timeIntervalSince1970) * 1000) / 1000
+            
+            return diff
+            
+        }
+        return Int.min
+    }
+    
     class func approveMigrateService(code: NSString) -> Bool{
         let service: WebService = WebService(url: ServiceURL.APPROVE_MIGRATE)
         let response: NSData? = service.fetchData(code, mediaType: MediaType.TEXT)!

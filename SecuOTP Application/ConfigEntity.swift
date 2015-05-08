@@ -31,7 +31,7 @@ class ConfigEntity: NSObject, Entity {
     }
     
     func save() -> Bool {
-        object.setValue(password, forKey: "password")
+        object.setValue(password, forKey: ConfigEntityKey.PASSWORD.rawValue as String)
         
         var error : NSError?
         context.save(&error)
@@ -77,4 +77,29 @@ class ConfigEntity: NSObject, Entity {
         }
         return false
     }
+    
+    func delete(key: ConfigEntityKey, data: NSString) -> NSManagedObject? {
+        let objects: [NSManagedObject] = self.fetch()
+        for i: NSManagedObject in objects {
+            if (i.valueForKey(key.rawValue as String)) as! NSString == data {
+                let objectInterest: NSManagedObject? = i
+                context.deleteObject(i)
+                return objectInterest
+            }
+        }
+        return nil
+    }
+    
+    func delete(key: ConfigEntityKey, data: Int) -> NSManagedObject? {
+        let objects: [NSManagedObject] = self.fetch()
+        for i: NSManagedObject in objects {
+            if (i.valueForKey(key.rawValue as String)) as! Int == data {
+                let objectInterest: NSManagedObject? = i
+                context.deleteObject(i)
+                return objectInterest
+            }
+        }
+        return nil
+    }
+
 }

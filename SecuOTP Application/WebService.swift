@@ -12,7 +12,7 @@ enum ServiceURL: NSString {
     case GET_APP_NAME = "http://128.199.82.168/SecuOTP-Service/database/app-name"
     case GET_APP_INFO = "http://128.199.82.168/SecuOTP-Service/database/app-info"
     case APPROVE_MIGRATE = "http://128.199.82.168/SecuOTP-Service/function/approve"
-    case TIME_SYNC = "http://128.199.82.168/SecuOTP-Service/time/sync"
+    case TIME_SYNC = "http://128.199.82.168/SecuOTP-Service/function/sync"
 }
 
 enum MediaType: NSString {
@@ -50,5 +50,21 @@ class WebService: NSObject {
         responseData = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
         
         return responseData
+    }
+    
+    func fetchData() -> NSData? {
+        responseData = NSMutableData()
+        
+        var configulation:NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        var session:NSURLSession = NSURLSession(configuration: configulation)
+        var request: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: url! as String)!)
+        request.HTTPMethod = "POST"
+               
+        var response: NSURLResponse?
+        var error: NSError?
+        responseData = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+        
+        return responseData
+
     }
 }

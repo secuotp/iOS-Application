@@ -15,6 +15,7 @@
 		471426B41A9E65C700D72128 /* ConfirmPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471426B31A9E65C700D72128 /* ConfirmPasswordViewController.swift */; };
 		4714F3C51A9F4EA9005FB8F5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714F3C41A9F4EA9005FB8F5 /* SettingViewController.swift */; };
 		4714F3C71A9F501F005FB8F5 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714F3C61A9F501F005FB8F5 /* OTPViewController.swift */; };
+		472C5DF71AEA45B50068F810 /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C5DF61AEA45B50068F810 /* AppInfoViewController.swift */; };
 		472F85E01AC1AD2400021FD6 /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 472F85C71AC1AD2400021FD6 /* CXHTMLDocument.m */; };
 		472F85E11AC1AD2400021FD6 /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 472F85C91AC1AD2400021FD6 /* CXMLDocument_CreationExtensions.m */; };
 		472F85E21AC1AD2400021FD6 /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 472F85CB1AC1AD2400021FD6 /* CXMLDocument_PrivateExtensions.m */; };
@@ -35,6 +36,7 @@
 		473ACB6D1AE9028E006B93E4 /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 473ACB661AE9028E006B93E4 /* SWUtilityButtonTapGestureRecognizer.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		473ACB6E1AE9028E006B93E4 /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 473ACB681AE9028E006B93E4 /* SWUtilityButtonView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		473ACB701AE90A92006B93E4 /* CustomManagerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ACB6F1AE90A92006B93E4 /* CustomManagerTableCell.swift */; };
+		478591F61AFA0F9300E96340 /* Time.plist in Resources */ = {isa = PBXBuildFile; fileRef = 478591F51AFA0F9300E96340 /* Time.plist */; };
 		478DE9891AC1E2DC00B01623 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478DE9881AC1E2DC00B01623 /* XMLParser.swift */; };
 		47C4C7EF1AC9525B00FC95C2 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C4C7EE1AC9525B00FC95C2 /* Site.swift */; };
 		47CA2E161A9DE88A00AA17E3 /* ConfigEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA2E151A9DE88A00AA17E3 /* ConfigEntity.swift */; };
@@ -73,6 +75,7 @@
 		471426B31A9E65C700D72128 /* ConfirmPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordViewController.swift; sourceTree = "<group>"; };
 		4714F3C41A9F4EA9005FB8F5 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		4714F3C61A9F501F005FB8F5 /* OTPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		472C5DF61AEA45B50068F810 /* AppInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
 		472F85C61AC1AD2400021FD6 /* CXHTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CXHTMLDocument.h; path = TouchXML/CXHTMLDocument.h; sourceTree = "<group>"; };
 		472F85C71AC1AD2400021FD6 /* CXHTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CXHTMLDocument.m; path = TouchXML/CXHTMLDocument.m; sourceTree = "<group>"; };
 		472F85C81AC1AD2400021FD6 /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CXMLDocument_CreationExtensions.h; path = TouchXML/CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 		473ACB671AE9028E006B93E4 /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWUtilityButtonView.h; path = SWTableCell/SWUtilityButtonView.h; sourceTree = "<group>"; };
 		473ACB681AE9028E006B93E4 /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWUtilityButtonView.m; path = SWTableCell/SWUtilityButtonView.m; sourceTree = "<group>"; };
 		473ACB6F1AE90A92006B93E4 /* CustomManagerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomManagerTableCell.swift; sourceTree = "<group>"; };
+		478591F51AFA0F9300E96340 /* Time.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Time.plist; sourceTree = "<group>"; };
 		478DE9881AC1E2DC00B01623 /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		47C1F3061AA09CE400A21966 /* SecuOTP Application-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SecuOTP Application-Bridging-Header.h"; sourceTree = "<group>"; };
 		47C4C7EE1AC9525B00FC95C2 /* Site.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 				47CE28561AC1A45E00BC93DD /* AppInfo.swift */,
 				47C4C7EE1AC9525B00FC95C2 /* Site.swift */,
 				473ACB6F1AE90A92006B93E4 /* CustomManagerTableCell.swift */,
+				478591F51AFA0F9300E96340 /* Time.plist */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				4714F3C61A9F501F005FB8F5 /* OTPViewController.swift */,
 				47D48BBB1AB463C5000F4254 /* AddApplicationViewController.swift */,
 				47CA2E261A9DFA8000AA17E3 /* pageviewcontoller */,
+				472C5DF61AEA45B50068F810 /* AppInfoViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -441,6 +447,7 @@
 				47E1B9DF1A9C7CC6007FCC8B /* Main.storyboard in Resources */,
 				472F85EC1AC1AD2400021FD6 /* Tidy in Resources */,
 				47E1B9E11A9C7CC6007FCC8B /* Images.xcassets in Resources */,
+				478591F61AFA0F9300E96340 /* Time.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +493,7 @@
 				473ACB6B1AE9028E006B93E4 /* SWLongPressGestureRecognizer.m in Sources */,
 				47CA2E2C1A9E021600AA17E3 /* CreatePasswordViewController.swift in Sources */,
 				472F85E91AC1AD2400021FD6 /* CXMLNode_PrivateExtensions.m in Sources */,
+				472C5DF71AEA45B50068F810 /* AppInfoViewController.swift in Sources */,
 				472F85E41AC1AD2400021FD6 /* CXMLElement_CreationExtensions.m in Sources */,
 				471426B41A9E65C700D72128 /* ConfirmPasswordViewController.swift in Sources */,
 				472F85EA1AC1AD2400021FD6 /* CXMLNode_XPathExtensions.m in Sources */,

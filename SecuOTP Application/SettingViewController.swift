@@ -11,16 +11,23 @@ import CoreData
 
 class SettingViewController: UITableViewController, UITableViewDelegate {
     
-    @IBOutlet weak var changePinCell: UITableViewCell!
+    @IBOutlet weak var timeLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // self.navigationItem.rightBarButtonItem = \self.editButtonItem()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let path = NSBundle.mainBundle().pathForResource("Time", ofType: "plist")
+        let dict = NSDictionary(contentsOfFile: path!)
+        let timeDiff = dict?.objectForKey("time") as! Int
+        timeLabel.text = "\(timeDiff) sec"
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,83 +36,72 @@ class SettingViewController: UITableViewController, UITableViewDelegate {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 1 {
-            let controller: UIAlertController = UIAlertController(title: "Change PIN", message: "Old PIN", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            let action1: UIAlertAction = UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) -> Void in
-                let textField: UITextField = controller.textFields![0] as! UITextField
-                let config: ConfigEntity = ConfigEntity()
+        if indexPath.section == 0 {
+            if indexPath.row == 1 {
+                timeSync()
+            }
+        } else {
+            if indexPath.row == 0 {
+                changePIN()
+            } else {
                 
-                var data: NSMutableArray = config.getValueFromKey(.PASSWORD)
-                if textField.text == data[0] as? NSString {
-                    println("Good")
-                }
-                
-            })
-            
-            controller.addTextFieldWithConfigurationHandler({ (textField: UITextField!) -> Void in
-                textField.secureTextEntry = true
-                textField.placeholder = "Old PIN Code"
-                textField.keyboardType = UIKeyboardType.PhonePad
-            })
-            
-            controller.addAction(action1)
-            
-            self.presentViewController(controller, animated: true, completion: nil)
+            }
         }
     }
-    /*    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+    
+    func timeSync() {
+        var time: Int = DatabaseService.timeSync()
+        
+        var path: NSString? = nil
+        let manager: NSFileManager = NSFileManager.defaultManager()
+        path = NSBundle.mainBundle().bundlePath.stringByAppendingPathComponent("Contents/Time.plist")
+        
+        if manager.isWritableFileAtPath(path as! String) {
+            var infoDict: NSMutableDictionary = NSMutableDictionary(contentsOfFile: path as! String)!
+            infoDict.setObject(time, forKey: "time")
+            infoDict.writeToFile(path as! String, atomically: false)
+        } else {
+            path = NSBundle.mainBundle().pathForResource("Time", ofType: "plist")
+            var infoDict = NSMutableDictionary(contentsOfFile: path as! String)
+            infoDict?.setObject(time, forKey: "time")
+            infoDict?.writeToFile(path as! String, atomically: false)
+        }
+        
+        
+        if time != Int.min {
+            let alert: UIAlertView = UIAlertView(title: "Time Sync Success", message: "Time Sync Completed", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
 
-        // Configure the cell...
-
-        return cell
+        } else {
+            let alert: UIAlertView = UIAlertView(title: "Time Sync Failed", message: "Have problem to connect to Time Server", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }
+        self.timeLabel.text = "\(time) sec"
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    
+    func changePIN() {
+        let controller: UIAlertController = UIAlertController(title: "Change PIN", message: "Old PIN", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let action1: UIAlertAction = UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) -> Void in
+            let textField: UITextField = controller.textFields![0] as! UITextField
+            let config: ConfigEntity = ConfigEntity()
+            
+            var data: NSMutableArray = config.getValueFromKey(.PASSWORD)
+            if textField.text == data[0] as? NSString {
+                println("Good")
+            }
+            
+        })
+        
+        controller.addTextFieldWithConfigurationHandler({ (textField: UITextField!) -> Void in
+            textField.secureTextEntry = true
+            textField.placeholder = "Old PIN Code"
+            textField.keyboardType = UIKeyboardType.PhonePad
+        })
+        
+        controller.addAction(action1)
+        
+        self.presentViewController(controller, animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

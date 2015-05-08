@@ -21,37 +21,25 @@ class OTPViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = site?.siteName as? String
-        var privateNum = "\(site?.userSerial as! String) \(site?.siteSerial as! String) SecuOTP".str2num()
-        self.privateKey = "\(privateNum)"
-        var message = "SecuOTP"
-        self.key = "\(site?.userSerial as! String)-\(site?.siteSerial as! String)-\(message.hmacSHA1(privateKey!)))"
+        let infoButton = UIBarButtonItem(image: UIImage(named: "InfoIcon"), style: UIBarButtonItemStyle.Done, target: self, action: Selector("rightNavButtonClick"))
+        self.navigationItem.rightBarButtonItem = infoButton
         
         let topOtpViewConstraint: NSLayoutConstraint = NSLayoutConstraint(item: otpView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: self.view.bounds.height * 0.25)
         
         self.view.addConstraint(topOtpViewConstraint)
         
-        var time: NSDate = NSDate()
-        var newTime = time.reformatTime(0, minute: 0, second: 30)
+        let otpDict: NSDictionary = site!.calcOTP()
+        var remaining: NSTimeInterval? = otpDict.objectForKey("remaining") as? NSTimeInterval
+        var otp: String? = otpDict.objectForKey("otp") as? String
         
-        var remainingTime = abs(newTime.timeIntervalSince1970 - time.timeIntervalSince1970)
-        println("\(remainingTime) Seconds left")
-        progressBar.progress = Float(remainingTime / 30)
+        progressBar.progress = Float(remaining! / 30)
         
-        var format: NSDateFormatter = NSDateFormatter()
-        format.dateFormat = "YYYY-MM-dd HH:mm:ss"
-        println("Time: \(format.stringFromDate(newTime))")
-        var tmp = Int(newTime.timeIntervalSince1970) * 1000
-
-        var timeKey: String = "\(Int(tmp))"
-        var data: String = self.key!
-        
-        var otp: NSString = data.totp(timeKey, digits: 8)
-        
-        otpCode.text = otp as String
+        otpCode.text = otp!
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(animated: Bool) {
+        
         let timer: NSTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("timerBackground"), userInfo: nil, repeats: true)
     }
 
@@ -61,32 +49,29 @@ class OTPViewController: UIViewController {
         if progressBar.progress == 1 {
             progressBar.progress = 0.0
             
-            var time: NSDate = NSDate()
-            time = time.reformatTime(0, minute: 0, second: 30)
+            let otpDict: NSDictionary = site!.calcOTP()
             
-            var format: NSDateFormatter = NSDateFormatter()
-            format.dateFormat = "YYYY-MM-dd HH:mm:ss"
-            println("Time: \(format.stringFromDate(time))")
-            var tmp = Int(time.timeIntervalSince1970) * 1000
+            var otp: String = otpDict.objectForKey("otp") as! String
             
-            var timeKey: String = "\(Int(tmp))"
-            var data: String = self.key!
-            
-            var otp: NSString = data.totp(timeKey, digits: 8)
-            
-            otpCode.text = otp as String
-
-            
-            otpCode.text = "\(otp)"
+            otpCode.text = otp
         }
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "OtpToInfo" {
+            var viewController: AppInfoViewController = segue.destinationViewController as! AppInfoViewController
+            viewController.application = site
+        }
+    }
+    
+    func rightNavButtonClick() {
+        performSegueWithIdentifier("OtpToInfo", sender: self)
+    }
     /*
     // MARK: - Navigation
 

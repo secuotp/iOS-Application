@@ -104,6 +104,8 @@ class CreatePasswordViewController: UIViewController {
                     config.password = self.pin
                     config.save()
                     
+                    let alert: UIAlertView = UIAlertView(title: "Completed", message: "Your PIN Number is saved", delegate: nil, cancelButtonTitle: "OK")
+                    alert.show()
                     self.performSegueWithIdentifier("CreatePasswordToManageApp", sender: self)
                 } else {
                     textBanner.text = "Enter PIN Number"

@@ -15,7 +15,7 @@
         <attribute name="user_serial" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Config" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="Config" positionX="-63" positionY="-18" width="128" height="60"/>
         <element name="Site" positionX="216" positionY="-9" width="128" height="180"/>
     </elements>
 </model>
